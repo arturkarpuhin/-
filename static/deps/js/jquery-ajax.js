@@ -211,26 +211,33 @@ $(document).ready(function () {
         }
     });
 
-    // Форматирования ввода номера телефона в форме (xxx) xxx-хххx
+    // Маска ввода телефона: +996 XXX XXX XXX
     document.getElementById('id_phone_number').addEventListener('input', function (e) {
-        var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
-        e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+        var digits = e.target.value.replace(/\D/g, '');
+        if (digits.length > 0 && !digits.startsWith('996')) {
+            digits = '996' + digits;
+        }
+        digits = digits.slice(0, 12);
+        var local = digits.slice(3);
+        var formatted = digits.length === 0 ? '' : '+996';
+        if (local.length > 0) formatted += ' ' + local.slice(0, 3);
+        if (local.length > 3) formatted += ' ' + local.slice(3, 6);
+        if (local.length > 6) formatted += ' ' + local.slice(6, 9);
+        e.target.value = formatted;
     });
 
-    // Проверяем на стороне клинта коррекность номера телефона в форме xxx-xxx-хх-хx
+    // Валидация и очистка телефона перед отправкой: +996XXXXXXXXX (без пробелов)
     $('#create_order_form').on('submit', function (event) {
         var phoneNumber = $('#id_phone_number').val();
-        var regex = /^\(\d{3}\) \d{3}-\d{4}$/;
+        var cleanedPhone = phoneNumber.replace(/\s/g, '');
+        var regex = /^\+996\d{9}$/;
 
-        if (!regex.test(phoneNumber)) {
+        if (!regex.test(cleanedPhone)) {
             $('#phone_number_error').show();
             event.preventDefault();
         } else {
             $('#phone_number_error').hide();
-
-            // Очистка номера телефона от скобок и тире перед отправкой формы
-            var cleanedPhoneNumber = phoneNumber.replace(/[()\-\s]/g, '');
-            $('#id_phone_number').val(cleanedPhoneNumber);
+            $('#id_phone_number').val(cleanedPhone);
         }
     });
 });
