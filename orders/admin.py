@@ -50,12 +50,14 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "user",
+        "phone_number",
         "requires_delivery",
-        "status",
         "payment_on_get",
+        "status",
         "is_paid",
         "created_timestamp",
     )
+    list_editable = ["status", "is_paid"]
 
     search_fields = (
         "id",
