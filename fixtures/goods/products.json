@@ -1,170 +1,170 @@
 [
-    {
-        "model": "goods.products",
-        "pk": 1,
-        "fields": {
-            "name": "Чайный столик и три стула",
-            "slug": "chajnyj-stolik-i-tri-stula",
-            "description": "Комплект из трёх стульев и дизайнерский столик для гостинной комнаты.",
-            "image": "goods_images/set_of_tea_table_and_three_chairs.jpg",
-            "price": "150.00",
-            "discount": "10.00",
-            "quantity": 10,
-            "category": 7
-        }
-    },
-    {
-        "model": "goods.products",
-        "pk": 2,
-        "fields": {
-            "name": "Чайный столик и два стула",
-            "slug": "chajnyj-stolik-i-dva-stula",
-            "description": "Набор из стола и двух стульев в минималистическом стиле.",
-            "image": "goods_images/set_of_tea_table_and_two_chairs.jpg",
-            "price": "93.00",
-            "discount": "2.50",
-            "quantity": 7,
-            "category": 7
-        }
-    },
-    {
-        "model": "goods.products",
-        "pk": 3,
-        "fields": {
-            "name": "Двухспальная кровать",
-            "slug": "dvuhspalnaya-krovat",
-            "description": "Кровать двухспальная с надголовником и вообще очень ортопедичная.",
-            "image": "goods_images/double_bed.jpg",
-            "price": "670.00",
-            "discount": "0.00",
-            "quantity": 5,
-            "category": 8
-        }
-    },
-    {
-        "model": "goods.products",
-        "pk": 4,
-        "fields": {
-            "name": "Кухонный стол с раковиной",
-            "slug": "kuhonnyj-stol-s-rakovinoj",
-            "description": "Кухонный стол для обеда с встроенной раковиной и стульями.",
-            "image": "goods_images/kitchen_table.jpg",
-            "price": "365.00",
-            "discount": "0.00",
-            "quantity": 11,
-            "category": 7
-        }
-    },
-    {
-        "model": "goods.products",
-        "pk": 5,
-        "fields": {
-            "name": "Кухонный стол с встройкой",
-            "slug": "kuhonnyj-stol-s-vstrojkoj",
-            "description": "Кухонный стол со встроенной плитой и раковиной. Много полок и вообще красивый.",
-            "image": "goods_images/kitchen_table_2.jpg",
-            "price": "430.00",
-            "discount": "5.00",
-            "quantity": 8,
-            "category": 7
-        }
-    },
-    {
-        "model": "goods.products",
-        "pk": 6,
-        "fields": {
-            "name": "Угловой диван для гостинной",
-            "slug": "uglovoj-divan-dlya-gostinnoj",
-            "description": "Угловой диван, раскладывается в двухспальную кровать, для гостинной и приема гостей самое то!",
-            "image": "goods_images/corner_sofa.jpg",
-            "price": "610.00",
-            "discount": "2.00",
-            "quantity": 8,
-            "category": 9
-        }
-    },
-    {
-        "model": "goods.products",
-        "pk": 7,
-        "fields": {
-            "name": "Прикроватный столик",
-            "slug": "prikrovatnyj-stolik",
-            "description": "Прикроватный столик с двумя выдвижными ящиками (цветок не входит в комплект).",
-            "image": "goods_images/bedside_table.jpg",
-            "price": "55.00",
-            "discount": "0.00",
-            "quantity": 6,
-            "category": 8
-        }
-    },
-    {
-        "model": "goods.products",
-        "pk": 8,
-        "fields": {
-            "name": "Диван обыкновенный",
-            "slug": "divan-obyknovennyj",
-            "description": "Диван, он же софа обыкновенная, ничего примечательного для описания.",
-            "image": "goods_images/sofa.jpg",
-            "price": "190.00",
-            "discount": "5.00",
-            "quantity": 5,
-            "category": 9
-        }
-    },
-    {
-        "model": "goods.products",
-        "pk": 9,
-        "fields": {
-            "name": "Стул офисный",
-            "slug": "stul-ofisnyj",
-            "description": "Описание товара, про то какой он классный, но это стул, что тут сказать...",
-            "image": "goods_images/office_chair.jpg",
-            "price": "30.00",
-            "discount": "0.50",
-            "quantity": 35,
-            "category": 10
-        }
-    },
-    {
-        "model": "goods.products",
-        "pk": 10,
-        "fields": {
-            "name": "Растение",
-            "slug": "rastenie",
-            "description": "Растение для украшения вашего интерьера подарит свежесть и безмятежность обстановке.",
-            "image": "goods_images/plants.jpg",
-            "price": "10.00",
-            "discount": "0.00",
-            "quantity": 17,
-            "category": 12
-        }
-    },
-    {
-        "model": "goods.products",
-        "pk": 11,
-        "fields": {
-            "name": "Цветок стилизированный",
-            "slug": "cvetok-stilizirovannyj",
-            "description": "Дизайнерский цветок (возможно искусственный) для украшения интерьера.",
-            "image": "goods_images/flower.jpg",
-            "price": "15.00",
-            "discount": "0.00",
-            "quantity": 17,
-            "category": 12
-        }
-    },
-    {
-        "model": "goods.products",
-        "pk": 12,
-        "fields": {
-            "name": "Прикроватный столик 2",
-            "slug": "prikrovatnyj-stolik-2",
-            "description": "Столик, довольно странный на вид, но подходит для размещения рядом с кроватью.",
-            "image": "goods_images/strange_table.jpg",
-            "price": "25.00",
-            "discount": "90.00",
-            "quantity": 10,
-            "category": 8
-        }
-    }
+  {
+    "model": "goods.products", "pk": 1,
+    "fields": {"name": "URBAN U Светлое 0.5л", "slug": "urban-u-svetloe-0-5l",
+      "description": "Светлое пиво URBAN U — мягкий вкус с лёгкой хмелевой горчинкой. Фильтрованное.",
+      "image": null, "price": "90.00", "discount": "0.00", "quantity": 150,
+      "category": 3, "container": "can", "volume": "0.5", "is_alcoholic": true}
+  },
+  {
+    "model": "goods.products", "pk": 2,
+    "fields": {"name": "URBAN U Тёмное 0.5л", "slug": "urban-u-tyomnoe-0-5l",
+      "description": "Тёмное пиво URBAN U с карамельными нотками и насыщенным солодовым ароматом.",
+      "image": null, "price": "95.00", "discount": "0.00", "quantity": 120,
+      "category": 3, "container": "can", "volume": "0.5", "is_alcoholic": true}
+  },
+  {
+    "model": "goods.products", "pk": 3,
+    "fields": {"name": "URBAN U Светлое 1л", "slug": "urban-u-svetloe-1l",
+      "description": "URBAN U Светлое в ПЭТ-бутылке 1 л — удобный формат для компании.",
+      "image": null, "price": "160.00", "discount": "0.00", "quantity": 100,
+      "category": 3, "container": "pet", "volume": "1.0", "is_alcoholic": true}
+  },
+  {
+    "model": "goods.products", "pk": 4,
+    "fields": {"name": "URBAN U Нефильтрованное 0.5л", "slug": "urban-u-nefiltrovannoe-0-5l",
+      "description": "Живое нефильтрованное пиво URBAN U — натуральный вкус без осветления.",
+      "image": null, "price": "105.00", "discount": "0.00", "quantity": 80,
+      "category": 3, "container": "glass", "volume": "0.5", "is_alcoholic": true}
+  },
+  {
+    "model": "goods.products", "pk": 5,
+    "fields": {"name": "Вино красное столовое 0.75л", "slug": "vino-krasnoe-stolovoe-0-75l",
+      "description": "Столовое красное вино средней крепости. Сухое, с фруктовым послевкусием.",
+      "image": null, "price": "450.00", "discount": "0.00", "quantity": 60,
+      "category": 1, "container": "glass", "volume": "0.75", "is_alcoholic": true}
+  },
+  {
+    "model": "goods.products", "pk": 6,
+    "fields": {"name": "Вино белое сухое 0.75л", "slug": "vino-beloe-suhoe-0-75l",
+      "description": "Белое сухое вино с лёгкой кислинкой и цветочным ароматом.",
+      "image": null, "price": "380.00", "discount": "0.00", "quantity": 55,
+      "category": 1, "container": "glass", "volume": "0.75", "is_alcoholic": true}
+  },
+  {
+    "model": "goods.products", "pk": 7,
+    "fields": {"name": "Водка пшеничная 0.5л", "slug": "vodka-pshenichnaya-0-5l",
+      "description": "Пшеничная водка тройной очистки. Мягкий вкус без резкого послевкусия.",
+      "image": null, "price": "550.00", "discount": "0.00", "quantity": 70,
+      "category": 1, "container": "glass", "volume": "0.5", "is_alcoholic": true}
+  },
+  {
+    "model": "goods.products", "pk": 8,
+    "fields": {"name": "Коньяк армянский 0.5л", "slug": "konyak-armyanskij-0-5l",
+      "description": "Армянский коньяк трёхлетней выдержки. Тёплый янтарный цвет, ванильные ноты.",
+      "image": null, "price": "650.00", "discount": "0.00", "quantity": 50,
+      "category": 1, "container": "glass", "volume": "0.5", "is_alcoholic": true}
+  },
+  {
+    "model": "goods.products", "pk": 9,
+    "fields": {"name": "Lemo Лимон 0.5л", "slug": "lemo-limon-0-5l",
+      "description": "Лимонад Lemo со вкусом лимона — освежающий напиток без искусственных красителей.",
+      "image": null, "price": "60.00", "discount": "0.00", "quantity": 200,
+      "category": 2, "container": "pet", "volume": "0.5", "is_alcoholic": false}
+  },
+  {
+    "model": "goods.products", "pk": 10,
+    "fields": {"name": "Lemo Малина 0.5л", "slug": "lemo-malina-0-5l",
+      "description": "Лимонад Lemo со вкусом малины — сладкий и ароматный.",
+      "image": null, "price": "60.00", "discount": "0.00", "quantity": 180,
+      "category": 2, "container": "pet", "volume": "0.5", "is_alcoholic": false}
+  },
+  {
+    "model": "goods.products", "pk": 11,
+    "fields": {"name": "Lemo Апельсин 1л", "slug": "lemo-apelsin-1l",
+      "description": "Лимонад Lemo со вкусом апельсина в увеличенном формате 1 л.",
+      "image": null, "price": "95.00", "discount": "0.00", "quantity": 160,
+      "category": 2, "container": "pet", "volume": "1.0", "is_alcoholic": false}
+  },
+  {
+    "model": "goods.products", "pk": 12,
+    "fields": {"name": "Вода питьевая Абдыш-Ата 1.5л", "slug": "voda-abdysh-ata-1-5l",
+      "description": "Питьевая вода Абдыш-Ата из горных источников. Без газа, 1.5 л.",
+      "image": null, "price": "55.00", "discount": "0.00", "quantity": 200,
+      "category": 2, "container": "pet", "volume": "1.5", "is_alcoholic": false}
+  },
+  {
+    "model": "goods.products", "pk": 13,
+    "fields": {"name": "Вода питьевая Абдыш-Ата 0.5л", "slug": "voda-abdysh-ata-0-5l",
+      "description": "Питьевая вода Абдыш-Ата из горных источников. Без газа, 0.5 л.",
+      "image": null, "price": "30.00", "discount": "0.00", "quantity": 200,
+      "category": 2, "container": "pet", "volume": "0.5", "is_alcoholic": false}
+  },
+  {
+    "model": "goods.products", "pk": 14,
+    "fields": {"name": "Разливное светлое пиво 1л", "slug": "razlivnoe-svetloe-pivo-1l",
+      "description": "Живое светлое пиво на розлив в ПЭТ. Свежее, нефильтрованное.",
+      "image": null, "price": "120.00", "discount": "0.00", "quantity": 100,
+      "category": 4, "container": "pet", "volume": "1.0", "is_alcoholic": true}
+  },
+  {
+    "model": "goods.products", "pk": 15,
+    "fields": {"name": "Разливной квас 1л", "slug": "razlivnoj-kvas-1l",
+      "description": "Натуральный хлебный квас на розлив. Домашний вкус, без консервантов.",
+      "image": null, "price": "80.00", "discount": "0.00", "quantity": 90,
+      "category": 4, "container": "pet", "volume": "1.0", "is_alcoholic": false}
+  },
+  {
+    "model": "goods.products", "pk": 16,
+    "fields": {"name": "Разливной лимонад 1л", "slug": "razlivnoj-limonad-1l",
+      "description": "Домашний лимонад на розлив — лимон, мята, имбирь. Без консервантов.",
+      "image": null, "price": "90.00", "discount": "0.00", "quantity": 80,
+      "category": 4, "container": "pet", "volume": "1.0", "is_alcoholic": false}
+  },
+  {
+    "model": "goods.products", "pk": 17,
+    "fields": {"name": "Овсяный напиток Абдыш-Ата 1л", "slug": "ovsyanyj-napitok-abdysh-ata-1l",
+      "description": "Растительный овсяный напиток Абдыш-Ата. Без лактозы, подходит для веганов.",
+      "image": null, "price": "220.00", "discount": "0.00", "quantity": 100,
+      "category": 5, "container": "pet", "volume": "1.0", "is_alcoholic": false}
+  },
+  {
+    "model": "goods.products", "pk": 18,
+    "fields": {"name": "Соевое молоко 1л", "slug": "soevoe-moloko-1l",
+      "description": "Соевый напиток без сахара. Богат растительным белком, без холестерина.",
+      "image": null, "price": "190.00", "discount": "0.00", "quantity": 80,
+      "category": 5, "container": "pet", "volume": "1.0", "is_alcoholic": false}
+  },
+  {
+    "model": "goods.products", "pk": 19,
+    "fields": {"name": "Миндальный напиток 0.5л", "slug": "mindalnyj-napitok-0-5l",
+      "description": "Миндальный напиток в стеклянной бутылке. Нежный ореховый вкус.",
+      "image": null, "price": "180.00", "discount": "0.00", "quantity": 60,
+      "category": 5, "container": "glass", "volume": "0.5", "is_alcoholic": false}
+  },
+  {
+    "model": "goods.products", "pk": 20,
+    "fields": {"name": "Овсяный напиток Абдыш-Ата 0.5л", "slug": "ovsyanyj-napitok-abdysh-ata-0-5l",
+      "description": "Овсяный напиток Абдыш-Ата в формате 0.5 л — удобно взять с собой.",
+      "image": null, "price": "130.00", "discount": "0.00", "quantity": 120,
+      "category": 5, "container": "pet", "volume": "0.5", "is_alcoholic": false}
+  },
+  {
+    "model": "goods.products", "pk": 21,
+    "fields": {"name": "NITRO Balance Клубника 0.5л", "slug": "nitro-balance-klubnika-0-5l",
+      "description": "Энергетик NITRO Balance со вкусом клубники. Таурин, кофеин, витамины группы B.",
+      "image": null, "price": "110.00", "discount": "0.00", "quantity": 150,
+      "category": 6, "container": "can", "volume": "0.5", "is_alcoholic": false}
+  },
+  {
+    "model": "goods.products", "pk": 22,
+    "fields": {"name": "NITRO Balance Лайм 0.5л", "slug": "nitro-balance-lajm-0-5l",
+      "description": "Энергетик NITRO Balance со вкусом лайма. Освежающий, бодрящий.",
+      "image": null, "price": "110.00", "discount": "0.00", "quantity": 150,
+      "category": 6, "container": "can", "volume": "0.5", "is_alcoholic": false}
+  },
+  {
+    "model": "goods.products", "pk": 23,
+    "fields": {"name": "NITRO Balance Манго 0.25л", "slug": "nitro-balance-mango-0-25l",
+      "description": "Компактный энергетик NITRO Balance со вкусом манго. 0.25 л — быстрый заряд.",
+      "image": null, "price": "85.00", "discount": "0.00", "quantity": 120,
+      "category": 6, "container": "can", "volume": "0.25", "is_alcoholic": false}
+  },
+  {
+    "model": "goods.products", "pk": 24,
+    "fields": {"name": "NITRO Balance Арбуз 0.5л", "slug": "nitro-balance-arbuz-0-5l",
+      "description": "Энергетик NITRO Balance со вкусом арбуза. Летний вкус, максимальный заряд.",
+      "image": null, "price": "110.00", "discount": "0.00", "quantity": 140,
+      "category": 6, "container": "can", "volume": "0.5", "is_alcoholic": false}
+  }
 ]

@@ -1,1 +1,9 @@
-[{"model": "goods.categories", "pk": 6, "fields": {"name": "Все товары", "slug": "all"}}, {"model": "goods.categories", "pk": 7, "fields": {"name": "Кухня", "slug": "kuhnya"}}, {"model": "goods.categories", "pk": 8, "fields": {"name": "Спальня", "slug": "spalnya"}}, {"model": "goods.categories", "pk": 9, "fields": {"name": "Гостинная", "slug": "gostinnaya"}}, {"model": "goods.categories", "pk": 10, "fields": {"name": "Офис", "slug": "ofis"}}, {"model": "goods.categories", "pk": 11, "fields": {"name": "Фурнитура", "slug": "furnitura"}}, {"model": "goods.categories", "pk": 12, "fields": {"name": "Декор", "slug": "dekor"}}]
+[
+  {"model": "goods.categories", "pk": 1, "fields": {"name": "Алкогольные напитки", "slug": "alkogolnye-napitki"}},
+  {"model": "goods.categories", "pk": 2, "fields": {"name": "Безалкогольные напитки", "slug": "bezalkogolnye-napitki"}},
+  {"model": "goods.categories", "pk": 3, "fields": {"name": "Пиво", "slug": "pivo"}},
+  {"model": "goods.categories", "pk": 4, "fields": {"name": "Разливные напитки", "slug": "razlivnye-napitki"}},
+  {"model": "goods.categories", "pk": 5, "fields": {"name": "Растительные продукты", "slug": "rastitelnye-produkty"}},
+  {"model": "goods.categories", "pk": 6, "fields": {"name": "Энергетики", "slug": "energetiki"}},
+  {"model": "goods.categories", "pk": 7, "fields": {"name": "Все напитки", "slug": "all"}}
+]

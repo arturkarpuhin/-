@@ -16,6 +16,22 @@ class Categories(models.Model):
         return self.name
 
 
+CONTAINER_CHOICES = [
+    ('glass', 'Стеклянная бутылка'),
+    ('can',   'Жестяная банка'),
+    ('pet',   'ПЭТ'),
+]
+
+VOLUME_CHOICES = [
+    ('0.25', '0.25 л'),
+    ('0.5',  '0.5 л'),
+    ('0.75', '0.75 л'),
+    ('1.0',  '1 л'),
+    ('1.5',  '1.5 л'),
+    ('2.0',  '2 л'),
+]
+
+
 class Products(models.Model):
     name = models.CharField(max_length=150, unique=True, verbose_name='Название')
     slug = models.SlugField(max_length=200, unique=True, blank=True, null=True, verbose_name='URL')
@@ -25,6 +41,9 @@ class Products(models.Model):
     discount = models.DecimalField(default=0.00, max_digits=4, decimal_places=2, verbose_name='Скидка в %')
     quantity = models.PositiveIntegerField(default=0, verbose_name='Количество')
     category = models.ForeignKey(to=Categories, on_delete=models.CASCADE, verbose_name='Категория')
+    container = models.CharField(max_length=10, choices=CONTAINER_CHOICES, blank=True, null=True, verbose_name='Тара')
+    volume = models.CharField(max_length=5, choices=VOLUME_CHOICES, blank=True, null=True, verbose_name='Объём')
+    is_alcoholic = models.BooleanField(default=False, verbose_name='Алкогольный')
 
 
     class Meta:

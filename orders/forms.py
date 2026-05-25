@@ -5,7 +5,7 @@ from django import forms
 class CreateOrderForm(forms.Form):
 
     first_name = forms.CharField()
-    last_name = forms.CharField()
+    last_name = forms.CharField(label='Фамилия')
     phone_number = forms.CharField()
     requires_delivery = forms.ChoiceField(
         choices=[
@@ -24,12 +24,9 @@ class CreateOrderForm(forms.Form):
     def clean_phone_number(self):
         data = self.cleaned_data['phone_number']
 
-        if not data.isdigit():
-            raise forms.ValidationError("Номер телефона должен содержать только цифры")
-        
-        pattern = re.compile(r'^\d{10}$')
+        pattern = re.compile(r'^\+996\d{9}$')
         if not pattern.match(data):
-            raise forms.ValidationError("Неверный формат номера")
+            raise forms.ValidationError("Неверный формат номера. Пример: +996700123456")
 
         return data
 
