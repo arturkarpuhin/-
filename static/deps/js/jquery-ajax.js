@@ -212,19 +212,91 @@ $(document).ready(function () {
     });
 
     // Маска ввода телефона: +996 XXX XXX XXX
-    document.getElementById('id_phone_number').addEventListener('input', function (e) {
-        var digits = e.target.value.replace(/\D/g, '');
-        if (digits.length > 0 && !digits.startsWith('996')) {
-            digits = '996' + digits;
+    var phoneInput = document.getElementById('id_phone_number');
+    if (phoneInput) {
+        var PHONE_PREFIX = '+996 ';
+
+        // Форматирование цифр локальной части (до 9 цифр) → "XXX XXX XXX"
+        function formatLocalDigits(digits) {
+            var d = digits.slice(0, 9);
+            var out = d.slice(0, 3);
+            if (d.length > 3) out += ' ' + d.slice(3, 6);
+            if (d.length > 6) out += ' ' + d.slice(6, 9);
+            return out;
         }
-        digits = digits.slice(0, 12);
-        var local = digits.slice(3);
-        var formatted = digits.length === 0 ? '' : '+996';
-        if (local.length > 0) formatted += ' ' + local.slice(0, 3);
-        if (local.length > 3) formatted += ' ' + local.slice(3, 6);
-        if (local.length > 6) formatted += ' ' + local.slice(6, 9);
-        e.target.value = formatted;
-    });
+
+        // focus: подставить PREFIX в пустое поле
+        phoneInput.addEventListener('focus', function () {
+            if (this.value.trim() === '' || this.value === '+996') {
+                this.value = PHONE_PREFIX;
+            }
+            var len = this.value.length;
+            this.setSelectionRange(len, len);
+        });
+
+        // keydown: блокировать нецифры и переполнение
+        phoneInput.addEventListener('keydown', function (e) {
+            // Backspace: не удалять дальше PREFIX
+            if (e.keyCode === 8) {
+                if (this.value.length <= PHONE_PREFIX.length) {
+                    e.preventDefault();
+                }
+                return;
+            }
+            // Разрешить Ctrl/Cmd-комбинации (Ctrl+V, Ctrl+A, Ctrl+C, Ctrl+Z и т.п.)
+            if (e.ctrlKey || e.metaKey) return;
+            // Спец-клавиши: delete, tab, стрелки, home, end — пропускаем
+            if ([46, 9, 37, 38, 39, 40, 35, 36].indexOf(e.keyCode) !== -1) return;
+            // Только цифры (основная клавиатура и numpad, без shift)
+            var isDigit = (e.keyCode >= 48 && e.keyCode <= 57 && !e.shiftKey) ||
+                          (e.keyCode >= 96 && e.keyCode <= 105);
+            if (!isDigit) {
+                e.preventDefault();
+                return;
+            }
+            // Не больше 9 цифр в локальной части
+            var localDigits = this.value.slice(PHONE_PREFIX.length).replace(/\D/g, '');
+            if (localDigits.length >= 9) {
+                e.preventDefault();
+            }
+        });
+
+        // input: переформатировать (страховка — работает и с автозаполнением)
+        phoneInput.addEventListener('input', function () {
+            var val = this.value;
+            // Восстановить PREFIX если он повреждён (автозаполнение, вставка)
+            if (!val.startsWith(PHONE_PREFIX)) {
+                var rawDigits = val.replace(/\D/g, '');
+                if (rawDigits.startsWith('996')) rawDigits = rawDigits.slice(3);
+                val = PHONE_PREFIX + rawDigits;
+            }
+            var localDigits = val.slice(PHONE_PREFIX.length).replace(/\D/g, '').slice(0, 9);
+            this.value = PHONE_PREFIX + formatLocalDigits(localDigits);
+            // Курсор в конец
+            var len = this.value.length;
+            this.setSelectionRange(len, len);
+        });
+
+        // paste: нормализовать вставленный текст
+        phoneInput.addEventListener('paste', function (e) {
+            e.preventDefault();
+            var pasted = (e.clipboardData || window.clipboardData).getData('text');
+            var digits = pasted.replace(/\D/g, '');
+            var local = '';
+            if (digits.startsWith('996')) {
+                local = digits.slice(3, 12);          // +996XXXXXXXXX или 996XXXXXXXXX
+            } else if (digits.startsWith('0') && digits.length > 1) {
+                local = digits.slice(1, 10);           // 0XXXXXXXXX (старый формат)
+            } else {
+                local = digits.slice(0, 9);            // уже локальная часть
+            }
+            if (local === '' || local.length > 9) {
+                this.value = PHONE_PREFIX;
+            } else {
+                this.value = PHONE_PREFIX + formatLocalDigits(local);
+            }
+        });
+    }
 
     // Валидация и очистка телефона перед отправкой: +996XXXXXXXXX (без пробелов)
     $('#create_order_form').on('submit', function (event) {
