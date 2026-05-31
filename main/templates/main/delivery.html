@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "deps/css/my_footer_css.css" %}">
+{% endblock %}
+
+{% block modal_cart %}
+{% include "includes/cart_button.html" %}
+{% endblock %}
+
+{% block content %}
+    <div class="mt-5 pt-5 bg-white custom-shadow rounded">
+        <div class="container p-4">
+            <h2 class="m-2"><strong>{{ content }}</strong></h2>
+            <h4 class="m-2 mt-4">Способы доставки</h4>
+            <p class="m-2">Доставка курьером по г. Бишкек и Чуйской области. Сроки и стоимость доставки рассчитываются при оформлении заказа.</p>
+            <p class="m-2">Самовывоз со склада завода «Абдыш-Ата» в г. Кант, Чуйская область.</p>
+            <h4 class="m-2 mt-4">Способы оплаты</h4>
+            <p class="m-2">Наличными курьеру при получении заказа.</p>
+            <p class="m-2">Банковской картой при получении заказа.</p>
+            <p class="m-2 text-muted">Онлайн-оплата на сайте не производится — расчёт только при получении заказа.</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+<footer class="py-4 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Сайт разработан Карпухиным Артуром</p>
+    </div>
+</footer>
+{% endblock %}

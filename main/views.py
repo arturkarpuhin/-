@@ -25,7 +25,27 @@ class AboutView(TemplateView):
         context['content'] = "О нас"
         context['text_on_page'] = "Текст о том почему этот магазин такой классный, и какой хороший товар."
         return context
-    
+
+
+class DeliveryView(TemplateView):
+    template_name = 'main/delivery.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Абдыш-Ата - Доставка и оплата'
+        context['content'] = 'Доставка и оплата'
+        return context
+
+
+class ContactsView(TemplateView):
+    template_name = 'main/contacts.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Абдыш-Ата - Контакты'
+        context['content'] = 'Контактная информация'
+        return context
+
 
 # def index(request):
 

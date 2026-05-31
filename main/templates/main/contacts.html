@@ -7,13 +7,16 @@
 
 {% block modal_cart %}
 {% include "includes/cart_button.html" %}
-{% endblock  %}
+{% endblock %}
 
 {% block content %}
     <div class="mt-5 pt-5 bg-white custom-shadow rounded">
         <div class="container p-4">
-        <h2 class="m-2"><strong>{{ content }}</strong></h2>
-        <p class="m-2">{{ text_on_page }}</p>
+            <h2 class="m-2"><strong>{{ content }}</strong></h2>
+            <p class="m-2"><strong>Адрес:</strong> Кыргызская Республика, Чуйская область, г. Кант, завод «Абдыш-Ата».</p>
+            <p class="m-2"><strong>Телефон:</strong> +996 (XXX) XX-XX-XX</p>
+            <p class="m-2"><strong>E-mail:</strong> info@abdysh-ata.kg</p>
+            <p class="m-2"><strong>Режим работы:</strong> понедельник – пятница, 09:00 – 18:00.</p>
         </div>
     </div>
 {% endblock %}
@@ -25,5 +28,3 @@
     </div>
 </footer>
 {% endblock %}
-
-
