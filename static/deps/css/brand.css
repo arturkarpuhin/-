@@ -1,0 +1,136 @@
+/* ===================================================================
+   brand.css — фирменная тема «Абдыш-Ата». Накладывается ПОВЕРХ Bootstrap.
+   Подключается последним в <head>, поэтому перекрывает дефолтные стили.
+   Группа Ф1: палитра, шрифты, фон, шапка, подвал.
+   =================================================================== */
+
+:root {
+  --brand-green: #2D8632;
+  --brand-green-dark: #246B29;
+  --brand-green-soft: #E8F5E9;
+  --leaf-light: #8BC34A;
+  --leaf-dark: #558B2F;
+  --page-bg: #F5F5F4;
+  --surface: #FFFFFF;
+  --text-dark: #1F2421;
+  --text-muted: #6B7280;
+  --radius-lg: 20px;
+  --radius-md: 16px;
+  --radius-pill: 50px;
+  --shadow-soft: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ----- Базовый фон и шрифт ----- */
+body {
+  background-image: none !important;
+  background-color: var(--page-bg);
+  color: var(--text-dark);
+  font-family: 'Inter', 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: 'Montserrat', 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+}
+
+/* ----- Шапка (светлая) ----- */
+.abdysh-navbar {
+  background-color: var(--surface);
+  border-bottom: 1px solid #E7E7E4;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.abdysh-navbar .navbar-brand {
+  color: var(--brand-green) !important;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+/* пункты меню тёмные (перекрываем .text-white от Bootstrap) */
+.abdysh-navbar .nav-link.text-white {
+  color: var(--text-dark) !important;
+  font-weight: 500;
+}
+.abdysh-navbar .nav-link.text-white:hover,
+.abdysh-navbar .nav-link.text-white:focus {
+  color: var(--brand-green) !important;
+}
+
+/* выпадающие меню — светлые, пункты тёмные */
+.abdysh-navbar .dropdown-menu {
+  border: 1px solid #ECECEC;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: 8px;
+}
+.abdysh-navbar .dropdown-item.text-white {
+  color: var(--text-dark) !important;
+  border-radius: 10px;
+}
+.abdysh-navbar .dropdown-item.text-white:hover {
+  background-color: var(--brand-green-soft);
+  color: var(--brand-green-dark) !important;
+}
+
+/* строка поиска в шапке */
+.abdysh-navbar form[role="search"] .form-control {
+  border-radius: var(--radius-pill);
+  border: 1px solid #DCDCDC;
+  padding-left: 16px;
+}
+.abdysh-navbar form[role="search"] .form-control:focus {
+  border-color: var(--brand-green);
+  box-shadow: 0 0 0 0.2rem rgba(45, 134, 50, 0.15);
+}
+.abdysh-navbar form[role="search"] .btn {
+  background-color: var(--brand-green);
+  border-color: var(--brand-green);
+  color: #FFFFFF !important;
+  border-radius: var(--radius-pill);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.abdysh-navbar form[role="search"] .btn:hover {
+  background-color: var(--brand-green-dark);
+  border-color: var(--brand-green-dark);
+}
+
+/* ----- Подвал (светлый, не фиксированный) ----- */
+footer {
+  position: static !important;
+  background-color: var(--surface) !important;
+  border-top: 1px solid #E7E7E4;
+  padding: 24px 0 !important;
+  width: 100%;
+  text-align: center;
+}
+
+/* перебиваем Bootstrap-класс bg-dark, который висит прямо на теге <footer> */
+footer.bg-dark {
+  background-color: var(--surface) !important;
+}
+footer,
+footer p,
+footer span,
+footer small,
+footer .text-white,
+footer .text-light {
+  color: var(--text-muted) !important;
+}
+footer a {
+  color: var(--brand-green) !important;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ----- Общие скругления и мягкая тень ----- */
+.btn {
+  border-radius: 12px;
+}
+.custom-shadow {
+  box-shadow: var(--shadow-soft) !important;
+  border-radius: var(--radius-lg);
+}
