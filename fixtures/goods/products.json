@@ -1,170 +1,750 @@
 [
   {
-    "model": "goods.products", "pk": 1,
-    "fields": {"name": "URBAN U Светлое 0.5л", "slug": "urban-u-svetloe-0-5l",
-      "description": "Светлое пиво URBAN U — мягкий вкус с лёгкой хмелевой горчинкой. Фильтрованное.",
-      "image": null, "price": "90.00", "discount": "0.00", "quantity": 150,
-      "category": 3, "container": "can", "volume": "0.5", "is_alcoholic": true}
+    "model": "goods.products",
+    "pk": 1,
+    "fields": {
+      "name": "Наше Пиво Шахтёрское Светлое 1л",
+      "slug": "nashe-pivo-shahterskoe-svetloe-1l",
+      "description": "Светлое фильтрованное пиво «Наше» из артезианской воды. Классический солодовый вкус.",
+      "image": null,
+      "price": "90.00",
+      "discount": "0.00",
+      "quantity": 150,
+      "category": 3,
+      "container": "pet",
+      "volume": "1.0",
+      "is_alcoholic": true
+    }
   },
   {
-    "model": "goods.products", "pk": 2,
-    "fields": {"name": "URBAN U Тёмное 0.5л", "slug": "urban-u-tyomnoe-0-5l",
-      "description": "Тёмное пиво URBAN U с карамельными нотками и насыщенным солодовым ароматом.",
-      "image": null, "price": "95.00", "discount": "0.00", "quantity": 120,
-      "category": 3, "container": "can", "volume": "0.5", "is_alcoholic": true}
+    "model": "goods.products",
+    "pk": 2,
+    "fields": {
+      "name": "Наше Пиво Шахтёрское Светлое 1.5л",
+      "slug": "nashe-pivo-shahterskoe-svetloe-1-5l",
+      "description": "Светлое пиво «Наше» в семейном формате 1.5 л.",
+      "image": null,
+      "price": "120.00",
+      "discount": "10.00",
+      "quantity": 120,
+      "category": 3,
+      "container": "pet",
+      "volume": "1.5",
+      "is_alcoholic": true
+    }
   },
   {
-    "model": "goods.products", "pk": 3,
-    "fields": {"name": "URBAN U Светлое 1л", "slug": "urban-u-svetloe-1l",
-      "description": "URBAN U Светлое в ПЭТ-бутылке 1 л — удобный формат для компании.",
-      "image": null, "price": "160.00", "discount": "0.00", "quantity": 100,
-      "category": 3, "container": "pet", "volume": "1.0", "is_alcoholic": true}
+    "model": "goods.products",
+    "pk": 3,
+    "fields": {
+      "name": "Наше Пиво Московское 0.5л",
+      "slug": "nashe-pivo-moskovskoe-0-5l",
+      "description": "Светлое пиво «Московское» с мягкой хмелевой горчинкой.",
+      "image": null,
+      "price": "75.00",
+      "discount": "0.00",
+      "quantity": 140,
+      "category": 3,
+      "container": "glass",
+      "volume": "0.5",
+      "is_alcoholic": true
+    }
   },
   {
-    "model": "goods.products", "pk": 4,
-    "fields": {"name": "URBAN U Нефильтрованное 0.5л", "slug": "urban-u-nefiltrovannoe-0-5l",
-      "description": "Живое нефильтрованное пиво URBAN U — натуральный вкус без осветления.",
-      "image": null, "price": "105.00", "discount": "0.00", "quantity": 80,
-      "category": 3, "container": "glass", "volume": "0.5", "is_alcoholic": true}
+    "model": "goods.products",
+    "pk": 4,
+    "fields": {
+      "name": "Наше Пиво Жигулёвское 0.5л",
+      "slug": "nashe-pivo-zhigulevskoe-0-5l",
+      "description": "Классическое «Жигулёвское» по традиционному рецепту.",
+      "image": null,
+      "price": "70.00",
+      "discount": "0.00",
+      "quantity": 140,
+      "category": 3,
+      "container": "glass",
+      "volume": "0.5",
+      "is_alcoholic": true
+    }
   },
   {
-    "model": "goods.products", "pk": 5,
-    "fields": {"name": "Вино красное столовое 0.75л", "slug": "vino-krasnoe-stolovoe-0-75l",
-      "description": "Столовое красное вино средней крепости. Сухое, с фруктовым послевкусием.",
-      "image": null, "price": "450.00", "discount": "0.00", "quantity": 60,
-      "category": 1, "container": "glass", "volume": "0.75", "is_alcoholic": true}
+    "model": "goods.products",
+    "pk": 5,
+    "fields": {
+      "name": "Живое Светлое нефильтрованное 0.5л",
+      "slug": "zhivoe-svetloe-nefiltrovannoe-0-5l",
+      "description": "Непастеризованное светлое пиво «Живое» — натуральный вкус без осветления.",
+      "image": null,
+      "price": "95.00",
+      "discount": "0.00",
+      "quantity": 100,
+      "category": 3,
+      "container": "glass",
+      "volume": "0.5",
+      "is_alcoholic": true
+    }
   },
   {
-    "model": "goods.products", "pk": 6,
-    "fields": {"name": "Вино белое сухое 0.75л", "slug": "vino-beloe-suhoe-0-75l",
-      "description": "Белое сухое вино с лёгкой кислинкой и цветочным ароматом.",
-      "image": null, "price": "380.00", "discount": "0.00", "quantity": 55,
-      "category": 1, "container": "glass", "volume": "0.75", "is_alcoholic": true}
+    "model": "goods.products",
+    "pk": 6,
+    "fields": {
+      "name": "Живое Тёмное нефильтрованное 0.5л",
+      "slug": "zhivoe-temnoe-nefiltrovannoe-0-5l",
+      "description": "Тёмное «Живое» с карамельно-солодовым ароматом.",
+      "image": null,
+      "price": "100.00",
+      "discount": "0.00",
+      "quantity": 90,
+      "category": 3,
+      "container": "glass",
+      "volume": "0.5",
+      "is_alcoholic": true
+    }
   },
   {
-    "model": "goods.products", "pk": 7,
-    "fields": {"name": "Водка пшеничная 0.5л", "slug": "vodka-pshenichnaya-0-5l",
-      "description": "Пшеничная водка тройной очистки. Мягкий вкус без резкого послевкусия.",
-      "image": null, "price": "550.00", "discount": "0.00", "quantity": 70,
-      "category": 1, "container": "glass", "volume": "0.5", "is_alcoholic": true}
+    "model": "goods.products",
+    "pk": 7,
+    "fields": {
+      "name": "Urban 312 Пшеничное нефильтрованное 0.5л",
+      "slug": "urban-312-pshenichnoe-0-5l",
+      "description": "Премиальное пшеничное нефильтрованное пиво Urban 312 «в ритме города».",
+      "image": null,
+      "price": "110.00",
+      "discount": "0.00",
+      "quantity": 110,
+      "category": 3,
+      "container": "can",
+      "volume": "0.5",
+      "is_alcoholic": true
+    }
   },
   {
-    "model": "goods.products", "pk": 8,
-    "fields": {"name": "Коньяк армянский 0.5л", "slug": "konyak-armyanskij-0-5l",
-      "description": "Армянский коньяк трёхлетней выдержки. Тёплый янтарный цвет, ванильные ноты.",
-      "image": null, "price": "650.00", "discount": "0.00", "quantity": 50,
-      "category": 1, "container": "glass", "volume": "0.5", "is_alcoholic": true}
+    "model": "goods.products",
+    "pk": 8,
+    "fields": {
+      "name": "Kuznec Black Pilsner 0.5л",
+      "slug": "kuznec-black-pilsner-0-5l",
+      "description": "Тёмный пилснер Kuznec с насыщенным вкусом и плотной пеной.",
+      "image": null,
+      "price": "130.00",
+      "discount": "0.00",
+      "quantity": 80,
+      "category": 3,
+      "container": "can",
+      "volume": "0.5",
+      "is_alcoholic": true
+    }
   },
   {
-    "model": "goods.products", "pk": 9,
-    "fields": {"name": "Lemo Лимон 0.5л", "slug": "lemo-limon-0-5l",
-      "description": "Лимонад Lemo со вкусом лимона — освежающий напиток без искусственных красителей.",
-      "image": null, "price": "60.00", "discount": "0.00", "quantity": 200,
-      "category": 2, "container": "pet", "volume": "0.5", "is_alcoholic": false}
+    "model": "goods.products",
+    "pk": 9,
+    "fields": {
+      "name": "Kuznec Belgian Blond Ale 0.5л",
+      "slug": "kuznec-belgian-blond-ale-0-5l",
+      "description": "Бельгийский светлый эль Kuznec с фруктовыми нотами.",
+      "image": null,
+      "price": "135.00",
+      "discount": "0.00",
+      "quantity": 80,
+      "category": 3,
+      "container": "can",
+      "volume": "0.5",
+      "is_alcoholic": true
+    }
   },
   {
-    "model": "goods.products", "pk": 10,
-    "fields": {"name": "Lemo Малина 0.5л", "slug": "lemo-malina-0-5l",
-      "description": "Лимонад Lemo со вкусом малины — сладкий и ароматный.",
-      "image": null, "price": "60.00", "discount": "0.00", "quantity": 180,
-      "category": 2, "container": "pet", "volume": "0.5", "is_alcoholic": false}
+    "model": "goods.products",
+    "pk": 10,
+    "fields": {
+      "name": "Buff Крепкое 0.5л",
+      "slug": "buff-krepkoe-0-5l",
+      "description": "Крепкое светлое пиво Buff для любителей насыщенного вкуса.",
+      "image": null,
+      "price": "95.00",
+      "discount": "0.00",
+      "quantity": 100,
+      "category": 3,
+      "container": "can",
+      "volume": "0.5",
+      "is_alcoholic": true
+    }
   },
   {
-    "model": "goods.products", "pk": 11,
-    "fields": {"name": "Lemo Апельсин 1л", "slug": "lemo-apelsin-1l",
-      "description": "Лимонад Lemo со вкусом апельсина в увеличенном формате 1 л.",
-      "image": null, "price": "95.00", "discount": "0.00", "quantity": 160,
-      "category": 2, "container": "pet", "volume": "1.0", "is_alcoholic": false}
+    "model": "goods.products",
+    "pk": 11,
+    "fields": {
+      "name": "LEMO Персик-Личи 0.5л",
+      "slug": "lemo-persik-lichi-0-5l",
+      "description": "Газированный напиток LEMO с натуральным соком, вкус персика и личи.",
+      "image": null,
+      "price": "60.00",
+      "discount": "15.00",
+      "quantity": 200,
+      "category": 2,
+      "container": "pet",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
   },
   {
-    "model": "goods.products", "pk": 12,
-    "fields": {"name": "Вода питьевая Абдыш-Ата 1.5л", "slug": "voda-abdysh-ata-1-5l",
-      "description": "Питьевая вода Абдыш-Ата из горных источников. Без газа, 1.5 л.",
-      "image": null, "price": "55.00", "discount": "0.00", "quantity": 200,
-      "category": 2, "container": "pet", "volume": "1.5", "is_alcoholic": false}
+    "model": "goods.products",
+    "pk": 12,
+    "fields": {
+      "name": "LEMO Арбуз-Клубника 0.5л",
+      "slug": "lemo-arbuz-klubnika-0-5l",
+      "description": "Газированный напиток LEMO с натуральным соком, вкус арбуза и клубники.",
+      "image": null,
+      "price": "60.00",
+      "discount": "0.00",
+      "quantity": 200,
+      "category": 2,
+      "container": "pet",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
   },
   {
-    "model": "goods.products", "pk": 13,
-    "fields": {"name": "Вода питьевая Абдыш-Ата 0.5л", "slug": "voda-abdysh-ata-0-5l",
-      "description": "Питьевая вода Абдыш-Ата из горных источников. Без газа, 0.5 л.",
-      "image": null, "price": "30.00", "discount": "0.00", "quantity": 200,
-      "category": 2, "container": "pet", "volume": "0.5", "is_alcoholic": false}
+    "model": "goods.products",
+    "pk": 13,
+    "fields": {
+      "name": "RETRO Cola 0.5л",
+      "slug": "retro-cola-0-5l",
+      "description": "Классическая кола RETRO COLA — бодрящий вкус по проверенному рецепту.",
+      "image": null,
+      "price": "55.00",
+      "discount": "0.00",
+      "quantity": 220,
+      "category": 2,
+      "container": "pet",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
   },
   {
-    "model": "goods.products", "pk": 14,
-    "fields": {"name": "Разливное светлое пиво 1л", "slug": "razlivnoe-svetloe-pivo-1l",
-      "description": "Живое светлое пиво на розлив в ПЭТ. Свежее, нефильтрованное.",
-      "image": null, "price": "120.00", "discount": "0.00", "quantity": 100,
-      "category": 4, "container": "pet", "volume": "1.0", "is_alcoholic": true}
+    "model": "goods.products",
+    "pk": 14,
+    "fields": {
+      "name": "RETRO Twist 0.5л",
+      "slug": "retro-twist-0-5l",
+      "description": "Газированный напиток RETRO TWIST с цитрусовым вкусом.",
+      "image": null,
+      "price": "55.00",
+      "discount": "0.00",
+      "quantity": 180,
+      "category": 2,
+      "container": "pet",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
   },
   {
-    "model": "goods.products", "pk": 15,
-    "fields": {"name": "Разливной квас 1л", "slug": "razlivnoj-kvas-1l",
-      "description": "Натуральный хлебный квас на розлив. Домашний вкус, без консервантов.",
-      "image": null, "price": "80.00", "discount": "0.00", "quantity": 90,
-      "category": 4, "container": "pet", "volume": "1.0", "is_alcoholic": false}
+    "model": "goods.products",
+    "pk": 15,
+    "fields": {
+      "name": "RETRO Tango 0.5л",
+      "slug": "retro-tango-0-5l",
+      "description": "Газированный напиток RETRO TANGO с фруктовым вкусом.",
+      "image": null,
+      "price": "55.00",
+      "discount": "0.00",
+      "quantity": 180,
+      "category": 2,
+      "container": "pet",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
   },
   {
-    "model": "goods.products", "pk": 16,
-    "fields": {"name": "Разливной лимонад 1л", "slug": "razlivnoj-limonad-1l",
-      "description": "Домашний лимонад на розлив — лимон, мята, имбирь. Без консервантов.",
-      "image": null, "price": "90.00", "discount": "0.00", "quantity": 80,
-      "category": 4, "container": "pet", "volume": "1.0", "is_alcoholic": false}
+    "model": "goods.products",
+    "pk": 16,
+    "fields": {
+      "name": "NITRO FRESH Мохито 0.5л",
+      "slug": "nitro-fresh-mohito-0-5l",
+      "description": "Газированный напиток NITRO FRESH со вкусом мохито.",
+      "image": null,
+      "price": "65.00",
+      "discount": "0.00",
+      "quantity": 160,
+      "category": 2,
+      "container": "pet",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
   },
   {
-    "model": "goods.products", "pk": 17,
-    "fields": {"name": "Овсяный напиток Абдыш-Ата 1л", "slug": "ovsyanyj-napitok-abdysh-ata-1l",
-      "description": "Растительный овсяный напиток Абдыш-Ата. Без лактозы, подходит для веганов.",
-      "image": null, "price": "220.00", "discount": "0.00", "quantity": 100,
-      "category": 5, "container": "pet", "volume": "1.0", "is_alcoholic": false}
+    "model": "goods.products",
+    "pk": 17,
+    "fields": {
+      "name": "NITRO FRESH Манго-Клубника 0.5л",
+      "slug": "nitro-fresh-mango-klubnika-0-5l",
+      "description": "Газированный напиток NITRO FRESH со вкусом манго и клубники.",
+      "image": null,
+      "price": "65.00",
+      "discount": "0.00",
+      "quantity": 160,
+      "category": 2,
+      "container": "pet",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
   },
   {
-    "model": "goods.products", "pk": 18,
-    "fields": {"name": "Соевое молоко 1л", "slug": "soevoe-moloko-1l",
-      "description": "Соевый напиток без сахара. Богат растительным белком, без холестерина.",
-      "image": null, "price": "190.00", "discount": "0.00", "quantity": 80,
-      "category": 5, "container": "pet", "volume": "1.0", "is_alcoholic": false}
+    "model": "goods.products",
+    "pk": 18,
+    "fields": {
+      "name": "Salam Ice Tea Зелёный 0.5л",
+      "slug": "salam-ice-tea-zelenyj-0-5l",
+      "description": "Холодный зелёный чай Salam Ice Tea — освежает в жару.",
+      "image": null,
+      "price": "60.00",
+      "discount": "0.00",
+      "quantity": 150,
+      "category": 2,
+      "container": "pet",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
   },
   {
-    "model": "goods.products", "pk": 19,
-    "fields": {"name": "Миндальный напиток 0.5л", "slug": "mindalnyj-napitok-0-5l",
-      "description": "Миндальный напиток в стеклянной бутылке. Нежный ореховый вкус.",
-      "image": null, "price": "180.00", "discount": "0.00", "quantity": 60,
-      "category": 5, "container": "glass", "volume": "0.5", "is_alcoholic": false}
+    "model": "goods.products",
+    "pk": 19,
+    "fields": {
+      "name": "Salam Ice Tea Чёрный 0.5л",
+      "slug": "salam-ice-tea-chernyj-0-5l",
+      "description": "Холодный чёрный чай Salam Ice Tea с лимоном.",
+      "image": null,
+      "price": "60.00",
+      "discount": "0.00",
+      "quantity": 150,
+      "category": 2,
+      "container": "pet",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
   },
   {
-    "model": "goods.products", "pk": 20,
-    "fields": {"name": "Овсяный напиток Абдыш-Ата 0.5л", "slug": "ovsyanyj-napitok-abdysh-ata-0-5l",
-      "description": "Овсяный напиток Абдыш-Ата в формате 0.5 л — удобно взять с собой.",
-      "image": null, "price": "130.00", "discount": "0.00", "quantity": 120,
-      "category": 5, "container": "pet", "volume": "0.5", "is_alcoholic": false}
+    "model": "goods.products",
+    "pk": 20,
+    "fields": {
+      "name": "Живая вода Лайм 0.5л",
+      "slug": "zhivaya-voda-lajm-0-5l",
+      "description": "Витаминизированная вода «Живая» со вкусом лайма.",
+      "image": null,
+      "price": "50.00",
+      "discount": "0.00",
+      "quantity": 180,
+      "category": 2,
+      "container": "pet",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
   },
   {
-    "model": "goods.products", "pk": 21,
-    "fields": {"name": "NITRO Balance Клубника 0.5л", "slug": "nitro-balance-klubnika-0-5l",
-      "description": "Энергетик NITRO Balance со вкусом клубники. Таурин, кофеин, витамины группы B.",
-      "image": null, "price": "110.00", "discount": "0.00", "quantity": 150,
-      "category": 6, "container": "can", "volume": "0.5", "is_alcoholic": false}
+    "model": "goods.products",
+    "pk": 21,
+    "fields": {
+      "name": "Минеральная вода Ыссык-Ата Тунгуч 0.5л",
+      "slug": "mineralnaya-voda-yssyk-ata-tunguch-0-5l",
+      "description": "Природная минеральная вода «Ыссык-Ата Тунгуч». Без газа, 0.5 л.",
+      "image": null,
+      "price": "30.00",
+      "discount": "0.00",
+      "quantity": 250,
+      "category": 2,
+      "container": "pet",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
   },
   {
-    "model": "goods.products", "pk": 22,
-    "fields": {"name": "NITRO Balance Лайм 0.5л", "slug": "nitro-balance-lajm-0-5l",
-      "description": "Энергетик NITRO Balance со вкусом лайма. Освежающий, бодрящий.",
-      "image": null, "price": "110.00", "discount": "0.00", "quantity": 150,
-      "category": 6, "container": "can", "volume": "0.5", "is_alcoholic": false}
+    "model": "goods.products",
+    "pk": 22,
+    "fields": {
+      "name": "Минеральная вода Ыссык-Ата Тунгуч 1.5л",
+      "slug": "mineralnaya-voda-yssyk-ata-tunguch-1-5l",
+      "description": "Природная минеральная вода «Ыссык-Ата Тунгуч». Без газа, 1.5 л.",
+      "image": null,
+      "price": "55.00",
+      "discount": "0.00",
+      "quantity": 250,
+      "category": 2,
+      "container": "pet",
+      "volume": "1.5",
+      "is_alcoholic": false
+    }
   },
   {
-    "model": "goods.products", "pk": 23,
-    "fields": {"name": "NITRO Balance Манго 0.25л", "slug": "nitro-balance-mango-0-25l",
-      "description": "Компактный энергетик NITRO Balance со вкусом манго. 0.25 л — быстрый заряд.",
-      "image": null, "price": "85.00", "discount": "0.00", "quantity": 120,
-      "category": 6, "container": "can", "volume": "0.25", "is_alcoholic": false}
+    "model": "goods.products",
+    "pk": 23,
+    "fields": {
+      "name": "NITRO Balance+ Клубника 0.5л",
+      "slug": "nitro-balance-klubnika-0-5l",
+      "description": "Тонизирующий напиток NITRO Balance+ со вкусом клубники. Таурин, кофеин, витамины B.",
+      "image": null,
+      "price": "110.00",
+      "discount": "10.00",
+      "quantity": 150,
+      "category": 6,
+      "container": "can",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
   },
   {
-    "model": "goods.products", "pk": 24,
-    "fields": {"name": "NITRO Balance Арбуз 0.5л", "slug": "nitro-balance-arbuz-0-5l",
-      "description": "Энергетик NITRO Balance со вкусом арбуза. Летний вкус, максимальный заряд.",
-      "image": null, "price": "110.00", "discount": "0.00", "quantity": 140,
-      "category": 6, "container": "can", "volume": "0.5", "is_alcoholic": false}
+    "model": "goods.products",
+    "pk": 24,
+    "fields": {
+      "name": "NITRO Balance+ Лайм 0.5л",
+      "slug": "nitro-balance-lajm-0-5l",
+      "description": "Тонизирующий напиток NITRO Balance+ со вкусом лайма.",
+      "image": null,
+      "price": "110.00",
+      "discount": "0.00",
+      "quantity": 150,
+      "category": 6,
+      "container": "can",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 25,
+    "fields": {
+      "name": "NITRO Tropical Energy 0.5л",
+      "slug": "nitro-tropical-energy-0-5l",
+      "description": "Энергетик NITRO Tropical с тропическим вкусом.",
+      "image": null,
+      "price": "115.00",
+      "discount": "0.00",
+      "quantity": 140,
+      "category": 6,
+      "container": "can",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 26,
+    "fields": {
+      "name": "NITRO Wild Energy 0.5л",
+      "slug": "nitro-wild-energy-0-5l",
+      "description": "Энергетик NITRO Wild с насыщенным ягодным вкусом.",
+      "image": null,
+      "price": "115.00",
+      "discount": "0.00",
+      "quantity": 140,
+      "category": 6,
+      "container": "can",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 27,
+    "fields": {
+      "name": "NITRO Max Energy 0.25л",
+      "slug": "nitro-max-energy-0-25l",
+      "description": "Компактный энергетик NITRO Max 0.25 л — быстрый заряд бодрости.",
+      "image": null,
+      "price": "85.00",
+      "discount": "0.00",
+      "quantity": 120,
+      "category": 6,
+      "container": "can",
+      "volume": "0.25",
+      "is_alcoholic": false
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 28,
+    "fields": {
+      "name": "NITRO Green Energy 0.5л",
+      "slug": "nitro-green-energy-0-5l",
+      "description": "Энергетик NITRO Green со вкусом зелёных фруктов.",
+      "image": null,
+      "price": "115.00",
+      "discount": "0.00",
+      "quantity": 140,
+      "category": 6,
+      "container": "can",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 29,
+    "fields": {
+      "name": "Живое Светлое разливное 1л",
+      "slug": "zhivoe-svetloe-razlivnoe-1l",
+      "description": "Живое светлое пиво на розлив. Свежее, непастеризованное.",
+      "image": null,
+      "price": "120.00",
+      "discount": "0.00",
+      "quantity": 100,
+      "category": 4,
+      "container": "pet",
+      "volume": "1.0",
+      "is_alcoholic": true
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 30,
+    "fields": {
+      "name": "Живое Нефильтрованное разливное 1л",
+      "slug": "zhivoe-nefiltrovannoe-razlivnoe-1l",
+      "description": "Живое нефильтрованное пиво на розлив. Натуральный вкус.",
+      "image": null,
+      "price": "125.00",
+      "discount": "0.00",
+      "quantity": 90,
+      "category": 4,
+      "container": "pet",
+      "volume": "1.0",
+      "is_alcoholic": true
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 31,
+    "fields": {
+      "name": "Urban 312 разливное 1л",
+      "slug": "urban-312-razlivnoe-1l",
+      "description": "Пшеничное нефильтрованное Urban 312 на розлив.",
+      "image": null,
+      "price": "140.00",
+      "discount": "0.00",
+      "quantity": 80,
+      "category": 4,
+      "container": "pet",
+      "volume": "1.0",
+      "is_alcoholic": true
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 32,
+    "fields": {
+      "name": "Квас Живой Хлебный разливной 1л",
+      "slug": "kvas-zhivoj-hlebnyj-razlivnoj-1l",
+      "description": "Натуральный хлебный квас «Живой» на розлив. Без консервантов.",
+      "image": null,
+      "price": "80.00",
+      "discount": "0.00",
+      "quantity": 90,
+      "category": 4,
+      "container": "pet",
+      "volume": "1.0",
+      "is_alcoholic": false
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 33,
+    "fields": {
+      "name": "Квас Живой Ржаной разливной 1л",
+      "slug": "kvas-zhivoj-rzhanoj-razlivnoj-1l",
+      "description": "Ржаной квас «Живой» на розлив. Домашний вкус.",
+      "image": null,
+      "price": "80.00",
+      "discount": "0.00",
+      "quantity": 90,
+      "category": 4,
+      "container": "pet",
+      "volume": "1.0",
+      "is_alcoholic": false
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 34,
+    "fields": {
+      "name": "Лимонад разливной 1л",
+      "slug": "limonad-razlivnoj-1l",
+      "description": "Домашний лимонад на розлив — лимон, мята, имбирь.",
+      "image": null,
+      "price": "90.00",
+      "discount": "0.00",
+      "quantity": 80,
+      "category": 4,
+      "container": "pet",
+      "volume": "1.0",
+      "is_alcoholic": false
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 35,
+    "fields": {
+      "name": "Растительный напиток Овсяный 1л",
+      "slug": "rastitelnyj-napitok-ovsyanyj-1l",
+      "description": "Овсяный растительный напиток Абдыш-Ата. Без лактозы, подходит для веганов.",
+      "image": null,
+      "price": "220.00",
+      "discount": "12.00",
+      "quantity": 100,
+      "category": 5,
+      "container": "pet",
+      "volume": "1.0",
+      "is_alcoholic": false
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 36,
+    "fields": {
+      "name": "Растительный напиток Кокосовый 1л",
+      "slug": "rastitelnyj-napitok-kokosovyj-1l",
+      "description": "Кокосовый растительный напиток Абдыш-Ата. Нежный вкус, без лактозы.",
+      "image": null,
+      "price": "240.00",
+      "discount": "0.00",
+      "quantity": 90,
+      "category": 5,
+      "container": "pet",
+      "volume": "1.0",
+      "is_alcoholic": false
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 37,
+    "fields": {
+      "name": "Растительный напиток Овсяный 0.5л",
+      "slug": "rastitelnyj-napitok-ovsyanyj-0-5l",
+      "description": "Овсяный растительный напиток в формате 0.5 л.",
+      "image": null,
+      "price": "130.00",
+      "discount": "0.00",
+      "quantity": 120,
+      "category": 5,
+      "container": "pet",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 38,
+    "fields": {
+      "name": "Растительный напиток Кокосовый 0.5л",
+      "slug": "rastitelnyj-napitok-kokosovyj-0-5l",
+      "description": "Кокосовый растительный напиток в формате 0.5 л.",
+      "image": null,
+      "price": "140.00",
+      "discount": "0.00",
+      "quantity": 110,
+      "category": 5,
+      "container": "pet",
+      "volume": "0.5",
+      "is_alcoholic": false
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 39,
+    "fields": {
+      "name": "Urban 312 Cider Яблоко-Груша 0.5л",
+      "slug": "urban-312-cider-yabloko-grusha-0-5l",
+      "description": "Сидр Urban 312 со вкусом яблока и груши. Лёгкий и освежающий.",
+      "image": null,
+      "price": "150.00",
+      "discount": "10.00",
+      "quantity": 80,
+      "category": 1,
+      "container": "glass",
+      "volume": "0.5",
+      "is_alcoholic": true
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 40,
+    "fields": {
+      "name": "Urban 312 Cider Клубника-Лайм-Мята 0.5л",
+      "slug": "urban-312-cider-klubnika-lajm-myata-0-5l",
+      "description": "Сидр Urban 312 со вкусом клубники, лайма и мяты.",
+      "image": null,
+      "price": "155.00",
+      "discount": "0.00",
+      "quantity": 80,
+      "category": 1,
+      "container": "glass",
+      "volume": "0.5",
+      "is_alcoholic": true
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 41,
+    "fields": {
+      "name": "Urban 312 Cider Чёрная Смородина-Малина 0.5л",
+      "slug": "urban-312-cider-chernaya-smorodina-malina-0-5l",
+      "description": "Сидр Urban 312 со вкусом чёрной смородины и малины.",
+      "image": null,
+      "price": "155.00",
+      "discount": "0.00",
+      "quantity": 80,
+      "category": 1,
+      "container": "glass",
+      "volume": "0.5",
+      "is_alcoholic": true
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 42,
+    "fields": {
+      "name": "Scorpio Классический 0.5л",
+      "slug": "scorpio-klassicheskij-0-5l",
+      "description": "Слабоалкогольный напиток Scorpio, классический вкус.",
+      "image": null,
+      "price": "140.00",
+      "discount": "0.00",
+      "quantity": 90,
+      "category": 1,
+      "container": "can",
+      "volume": "0.5",
+      "is_alcoholic": true
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 43,
+    "fields": {
+      "name": "Scorpio Манго-Клубника 0.5л",
+      "slug": "scorpio-mango-klubnika-0-5l",
+      "description": "Слабоалкогольный напиток Scorpio со вкусом манго и клубники.",
+      "image": null,
+      "price": "145.00",
+      "discount": "0.00",
+      "quantity": 90,
+      "category": 1,
+      "container": "can",
+      "volume": "0.5",
+      "is_alcoholic": true
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 44,
+    "fields": {
+      "name": "Scorpio Экзотик 0.5л",
+      "slug": "scorpio-ekzotik-0-5l",
+      "description": "Слабоалкогольный напиток Scorpio с экзотическим вкусом.",
+      "image": null,
+      "price": "145.00",
+      "discount": "0.00",
+      "quantity": 90,
+      "category": 1,
+      "container": "can",
+      "volume": "0.5",
+      "is_alcoholic": true
+    }
   }
 ]
