@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load goods_tags %}
 
 {% block css %}
     <link rel="stylesheet" href="{% static "deps/css/my_footer_css.css" %}">
@@ -10,7 +11,22 @@
 {% endblock  %}
 
 {% block content %}
-    <h1 class="mt-5 pt-5"><strong>{{ content }}</strong></h1>
+    <section class="products-section">
+        <h1 class="section-title"><strong>Наша продукция</strong></h1>
+        <div class="row g-3">
+            {% tag_categories as categories %}
+            {% for category in categories %}
+                {% if category.slug != "all" %}
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <a class="cat-card cat-color-{{ category.id }}" href="{% url "catalog:index" category.slug %}">
+                            <span class="cat-name">{{ category.name }}</span>
+                            <span class="cat-arrow">&#8594;</span>
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
 {% endblock %}
 
 {% block footer %}
