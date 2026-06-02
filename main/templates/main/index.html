@@ -1,40 +1,692 @@
-{% extends "base.html" %}
 {% load static %}
-{% load goods_tags %}
 
-{% block css %}
-    <link rel="stylesheet" href="{% static "deps/css/my_footer_css.css" %}">
-{% endblock %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASEKOVco - Производитель напитков</title>
 
-{% block modal_cart %}
-{% include "includes/cart_button.html" %}
-{% endblock  %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'deps/css/landing.css' %}">
+</head>
 
-{% block content %}
-    <section class="products-section">
-        <h1 class="section-title"><strong>Наша продукция</strong></h1>
-        <div class="row g-4">
-            {% tag_categories as categories %}
-            {% for category in categories %}
-                {% if category.slug != "all" %}
-                    <div class="col-12 col-sm-6 col-lg-4">
-                        <a class="cat-card cat-color-{{ category.id }}" href="{% url "catalog:index" category.slug %}">
-                            <span class="cat-name">{{ category.name }}</span>
-                            <span class="cat-arrow">&#8599;</span>
-                        </a>
+<body>
+
+<div
+    id="heroAssets"
+    data-mango="{% static 'main/img/nitro-mango.png' %}"
+    data-mojito="{% static 'main/img/nitro-mojito.png' %}"
+    data-czech="{% static 'main/img/czech.png' %}"
+    data-bavarian="{% static 'main/img/bavarian.png' %}"
+></div>
+
+<div class="age-overlay" id="ageOverlay">
+    <div class="age-modal">
+        <div class="age-logo">NASEKOV<span>co</span></div>
+        <h2>Подтвердите возраст</h2>
+        <p>
+            На сайте есть закрытые информационные разделы 18+. Без подтверждения возраста
+            они остаются недоступными.
+        </p>
+        <div class="age-actions">
+            <button class="btn btn-primary" id="ageYes" type="button">Мне есть 18</button>
+            <button class="btn btn-outline" id="ageNo" type="button">Нет</button>
+        </div>
+    </div>
+</div>
+
+<header class="site-header" id="siteHeader">
+    <div class="header-inner">
+        <a href="{% url 'main:index' %}" class="logo">
+            NASEKOV<span>co</span>
+        </a>
+
+        <nav class="desktop-nav">
+            <div class="nav-item">
+                <a href="{% url 'main:about' %}">О компании</a>
+                <div class="dropdown">
+                    <a href="{% url 'main:about' %}">История компании</a>
+                    <a href="#geography">География бренда</a>
+                    <a href="#">Новости</a>
+                    <a href="#">Контакты</a>
+                    <a href="#">Карьера</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#products">Продукция</a>
+                <div class="dropdown">
+                    <a href="#products" data-open-tab="soft">Безалкогольная</a>
+                    <a href="#products" data-open-tab="energy">Энергетики</a>
+                    <a href="#products" data-open-tab="draft">Разливные напитки</a>
+                    <a href="#products" data-open-tab="plant">Растительные продукты</a>
+                    <a href="#products" data-open-tab="beer">Раздел 18+</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#production">Производство</a>
+                <div class="dropdown">
+                    <a href="#brewery">Пивоварня</a>
+                    <a href="#lab">Лаборатория</a>
+                    <a href="#drink-line">Цех напитков</a>
+                    <a href="#geography">География</a>
+                </div>
+            </div>
+
+            <a href="#">Новости</a>
+            <a href="#">Контакты</a>
+        </nav>
+
+        <div class="header-actions">
+            <div class="lang">
+                <button class="lang-current" type="button">RU</button>
+                <div class="lang-menu">
+                    <a href="#">RU</a>
+                    <a href="#">EN</a>
+                    <a href="#">KG</a>
+                </div>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="{% url 'main:about' %}">О компании</a>
+        <a href="#products">Продукция</a>
+        <a href="#production">Производство</a>
+        <a href="#">Новости</a>
+        <a href="#">Контакты</a>
+        <button class="mobile-request" type="button" data-open-request>Оставить заявку</button>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-decor one"></div>
+        <div class="hero-decor two"></div>
+
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-kicker">Новая линейка напитков</div>
+
+                <h1>
+                    NITRO Fresh
+                    <span>яркий вкус, свежий формат</span>
+                </h1>
+
+                <p id="heroDescription">
+                    Освежающий напиток с насыщенным вкусом манго и клубники.
+                    Подходит для витрины, каталога и презентации продукции.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#products" class="btn btn-primary">Смотреть продукцию</a>
+                    <button class="btn btn-light" type="button" data-open-request>Оставить заявку</button>
+                </div>
+
+                <div class="hero-mini-stats">
+                    <div>
+                        <strong>0.45 л</strong>
+                        <span>объем банки</span>
                     </div>
-                {% endif %}
-            {% endfor %}
+                    <div>
+                        <strong>6+</strong>
+                        <span>категорий</span>
+                    </div>
+                    <div>
+                        <strong>120 м</strong>
+                        <span>артезианская вода</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-showcase">
+                <button class="hero-arrow hero-prev" id="heroPrev" type="button" aria-label="Предыдущий товар">‹</button>
+
+                <div class="hero-product-card" id="heroProductCard">
+                    <div class="hero-product-glow"></div>
+                    <div class="hero-can-fallback" id="heroCanFallback" data-label="NITRO"></div>
+
+                    <img
+                        src="{% static 'main/img/nitro-mango.png' %}"
+                        alt="Nitro Fresh Манго Клубника"
+                        class="hero-product-img"
+                        id="heroImage"
+                    >
+
+                    <div class="hero-product-label">
+                        <span id="heroCategory">Nitro Fresh</span>
+                        <strong id="heroTitle">Манго / клубника</strong>
+                    </div>
+
+                    <div class="hero-slider-dots" id="heroDots"></div>
+                </div>
+
+                <button class="hero-arrow hero-next" id="heroNext" type="button" aria-label="Следующий товар">›</button>
+            </div>
         </div>
     </section>
-{% endblock %}
 
-{% block footer %}
-<footer class="py-4 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Сайт разработан Карпухиным Артуром</p>
+    <section class="ceo-section">
+        <div class="container ceo-grid">
+            <div class="ceo-photo">
+                <div class="ceo-photo-placeholder">
+                    <span>CEO</span>
+                </div>
+            </div>
+
+            <div class="ceo-text">
+                <span class="section-label">Обращение руководителя</span>
+                <h2>Качество начинается с отношения к делу</h2>
+                <p>
+                    Наша компания развивает производство напитков, объединяя современные технологии,
+                    строгий контроль качества и уважение к традициям.
+                </p>
+                <p>
+                    Для нас важно не просто выпускать напитки, а строить долгую систему доверия между
+                    производством, партнерами и покупателями.
+                </p>
+                <div class="signature">
+                    <strong>Азат Советбекович</strong>
+                    <span>Генеральный директор</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="world-section" id="geography">
+        <div class="container">
+            <div class="section-head centered">
+                <span class="section-label">География бренда</span>
+                <h2>Наши бренды по всему миру</h2>
+                <p>
+                    Продукция представлена на локальном и международном рынках,
+                    а бренд развивается через партнерскую сеть и стабильные поставки.
+                </p>
+            </div>
+
+            <div class="map-card">
+                <div class="map-grid"></div>
+
+                <div class="map-point point-kg">
+                    <span></span>
+                    <b>Кыргызстан</b>
+                </div>
+
+                <div class="map-point point-kz">
+                    <span></span>
+                    <b>Казахстан</b>
+                </div>
+
+                <div class="map-point point-uz">
+                    <span></span>
+                    <b>Узбекистан</b>
+                </div>
+
+                <div class="map-point point-ru">
+                    <span></span>
+                    <b>Россия</b>
+                </div>
+
+                <div class="map-point point-cn">
+                    <span></span>
+                    <b>Китай</b>
+                </div>
+            </div>
+
+            <div class="brand-marquee">
+                <div class="brand-track">
+                    <span>NITRO</span>
+                    <span>FRESH</span>
+                    <span>CZECH</span>
+                    <span>BAVARIAN</span>
+                    <span>LEMO</span>
+                    <span>RETRO</span>
+                    <span>SALAM</span>
+                    <span>NITRO</span>
+                    <span>FRESH</span>
+                    <span>CZECH</span>
+                    <span>BAVARIAN</span>
+                    <span>LEMO</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-label">Каталог</span>
+                <h2>Наша продукция</h2>
+                <p>
+                    Витринный раздел с крупными карточками, нормальным переключением и запасным
+                    отображением, если файл изображения пока не найден в static.
+                </p>
+            </div>
+
+            <div class="product-tabs">
+                <button class="product-tab active" type="button" data-tab="soft">Безалкогольные</button>
+                <button class="product-tab" type="button" data-tab="energy">Энергетики</button>
+                <button class="product-tab" type="button" data-tab="draft">Разливные</button>
+                <button class="product-tab" type="button" data-tab="plant">Растительные</button>
+                <button class="product-tab" type="button" data-tab="beer">Раздел <small>18+</small></button>
+            </div>
+
+            <div class="product-panel active" data-panel="soft">
+                <div class="product-info">
+                    <span class="product-type">Безалкогольная продукция</span>
+                    <h3>Освежающие напитки</h3>
+                    <p>
+                        Газированные напитки, чай, вода и лимонады для повседневной витрины.
+                        Блок можно связать с Django-моделью ProductCategory.
+                    </p>
+
+                    <div class="info-columns">
+                        <div>
+                            <h4>Описание</h4>
+                            <p>
+                                Яркая визуальная подача, крупные карточки и понятная навигация по вкусам.
+                            </p>
+                        </div>
+                        <div>
+                            <h4>Ингредиенты</h4>
+                            <p>
+                                В карточке товара можно вывести состав, объем, упаковку и условия хранения.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-gallery">
+                    <article class="drink-card" data-fallback="Nitro Fresh">
+                        <img src="{% static 'main/img/nitro-mango.png' %}" alt="Nitro Fresh Манго Клубника">
+                        <h4>Nitro Fresh</h4>
+                        <p>Манго / клубника</p>
+                    </article>
+
+                    <article class="drink-card" data-fallback="Mojito">
+                        <img src="{% static 'main/img/nitro-mojito.png' %}" alt="Nitro Fresh Мохито">
+                        <h4>Nitro Fresh</h4>
+                        <p>Мохито</p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="product-panel" data-panel="energy">
+                <div class="product-info">
+                    <span class="product-type">Энергетики</span>
+                    <h3>Nitro Fresh</h3>
+                    <p>
+                        Линейка с сочной цветовой палитрой, крупным продуктовым изображением
+                        и описанием вкуса. Хорошо подходит для главного слайдера и промо-блоков.
+                    </p>
+
+                    <div class="info-columns">
+                        <div>
+                            <h4>Описание</h4>
+                            <p>
+                                Манго-клубника, мохито и другие вкусы можно вывести через цикл из базы данных.
+                            </p>
+                        </div>
+                        <div>
+                            <h4>Состав</h4>
+                            <p>
+                                Состав лучше хранить отдельным полем в модели продукта.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-gallery">
+                    <article class="drink-card featured" data-fallback="Mango">
+                        <img src="{% static 'main/img/nitro-mango.png' %}" alt="Nitro Fresh Манго Клубника">
+                        <h4>Манго / клубника</h4>
+                        <p>0.45 л</p>
+                    </article>
+
+                    <article class="drink-card featured" data-fallback="Mojito">
+                        <img src="{% static 'main/img/nitro-mojito.png' %}" alt="Nitro Fresh Мохито">
+                        <h4>Мохито</h4>
+                        <p>0.45 л</p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="product-panel" data-panel="draft">
+                <div class="product-info">
+                    <span class="product-type">Разливные напитки</span>
+                    <h3>Формат для партнеров</h3>
+                    <p>
+                        Раздел для B2B-презентации, поставок, условий сотрудничества
+                        и отображения ассортимента для заведений.
+                    </p>
+
+                    <div class="info-columns">
+                        <div>
+                            <h4>Описание</h4>
+                            <p>
+                                Можно добавить карточки тары, условия поставки и кнопку заявки для партнеров.
+                            </p>
+                        </div>
+                        <div>
+                            <h4>Партнерство</h4>
+                            <p>
+                                Форма заявки открывается в модальном окне без перезагрузки страницы.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-gallery placeholder-gallery">
+                    <article class="drink-card text-card">
+                        <h4>Тара</h4>
+                        <p>Для заведений и партнеров</p>
+                    </article>
+
+                    <article class="drink-card text-card">
+                        <h4>Поставка</h4>
+                        <p>По согласованному графику</p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="product-panel" data-panel="plant">
+                <div class="product-info">
+                    <span class="product-type">Растительные продукты</span>
+                    <h3>Современная линейка</h3>
+                    <p>
+                        Блок для растительных напитков, молочной альтернативы
+                        и новых категорий продукции.
+                    </p>
+
+                    <div class="info-columns">
+                        <div>
+                            <h4>Описание</h4>
+                            <p>
+                                Нейтральная светлая карточка хорошо отделяет эту категорию от энергетиков.
+                            </p>
+                        </div>
+                        <div>
+                            <h4>Состав</h4>
+                            <p>
+                                Злаки, вода, натуральные компоненты и дополнительные характеристики.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-gallery placeholder-gallery">
+                    <article class="drink-card text-card plant-card">
+                        <h4>Овсяный</h4>
+                        <p>Растительный напиток</p>
+                    </article>
+
+                    <article class="drink-card text-card plant-card">
+                        <h4>Кокосовый</h4>
+                        <p>Растительный напиток</p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="product-panel" data-panel="beer">
+                <div class="product-info">
+                    <span class="product-type">Закрытый раздел 18+</span>
+                    <h3>Информационный раздел</h3>
+                    <p>
+                        Этот блок оставлен как закрытая зона сайта. Здесь нет кнопок покупки,
+                        корзины или оформления заказа.
+                    </p>
+
+                    <div class="info-columns">
+                        <div>
+                            <h4>Доступ</h4>
+                            <p>
+                                Контент раздела показывается только после подтверждения возраста.
+                            </p>
+                        </div>
+                        <div>
+                            <h4>Ограничение</h4>
+                            <p>
+                                Для публичной витрины лучше оставлять нейтральное описание без продажи.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="locked-note">
+                        Раздел 18+ не используется как товарная карточка и не содержит действий для заказа.
+                    </div>
+                </div>
+
+                <div class="product-gallery">
+                    <article class="drink-card restricted" data-fallback="18+">
+                        <span class="age-badge">18+</span>
+                        <img src="{% static 'main/img/czech.png' %}" alt="Закрытый раздел 18+">
+                        <h4>Раздел 18+</h4>
+                        <p>Доступ ограничен</p>
+                    </article>
+
+                    <article class="drink-card restricted" data-fallback="18+">
+                        <span class="age-badge">18+</span>
+                        <img src="{% static 'main/img/bavarian.png' %}" alt="Закрытый раздел 18+">
+                        <h4>Информация</h4>
+                        <p>Только после проверки возраста</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="production-section" id="production">
+        <div class="container">
+            <div class="section-head centered">
+                <span class="section-label">Производство</span>
+                <h2>Технологии, контроль и стабильность</h2>
+                <p>
+                    Блок показывает ключевые направления производства:
+                    цех напитков, лабораторию и производственную линию.
+                </p>
+            </div>
+
+            <div class="production-grid">
+                <article class="production-card" id="brewery">
+                    <div class="production-number">01</div>
+                    <h3>Производственная зона</h3>
+                    <p>
+                        Контроль сырья, воды, температурных режимов и стабильности партии.
+                    </p>
+                    <a href="#">Подробнее</a>
+                </article>
+
+                <article class="production-card" id="drink-line">
+                    <div class="production-number">02</div>
+                    <h3>Цех напитков</h3>
+                    <p>
+                        Линия для напитков, розлива, упаковки и подготовки продукции к поставке.
+                    </p>
+                    <a href="#">Подробнее</a>
+                </article>
+
+                <article class="production-card" id="lab">
+                    <div class="production-number">03</div>
+                    <h3>Лаборатория</h3>
+                    <p>
+                        Контроль состава, качества, безопасности и соответствия требованиям.
+                    </p>
+                    <a href="#">Подробнее</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="awards-section">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-label">Достижения</span>
+                <h2>Наши награды</h2>
+            </div>
+
+            <div class="awards-slider">
+                <button class="award-arrow" id="awardPrev" type="button" aria-label="Назад">‹</button>
+
+                <div class="awards-track" id="awardsTrack">
+                    <article class="award-card">
+                        <span>2019</span>
+                        <h3>HORECA CLUB</h3>
+                        <p>Уникальная технология</p>
+                    </article>
+
+                    <article class="award-card">
+                        <span>2022</span>
+                        <h3>Industry Awards</h3>
+                        <p>Лучший продукт</p>
+                    </article>
+
+                    <article class="award-card">
+                        <span>2023</span>
+                        <h3>HoReCa Awards</h3>
+                        <p>Признание качества</p>
+                    </article>
+
+                    <article class="award-card">
+                        <span>2024</span>
+                        <h3>Partner Awards</h3>
+                        <p>Партнерское развитие</p>
+                    </article>
+                </div>
+
+                <button class="award-arrow" id="awardNext" type="button" aria-label="Вперед">›</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container cta-grid">
+            <article class="cta-card career">
+                <span>Карьера</span>
+                <h2>Создавайте вкусное будущее вместе с нами</h2>
+                <p>
+                    Присоединяйтесь к команде, развивайте производство,
+                    маркетинг, логистику и сервис.
+                </p>
+                <a href="#">Хочу стать сотрудником</a>
+            </article>
+
+            <article class="cta-card partner">
+                <span>Сотрудничество</span>
+                <h2>Развивайте бизнес вместе с нами</h2>
+                <p>
+                    Оставьте заявку для обсуждения поставок, партнерства
+                    и коммерческих условий.
+                </p>
+                <button type="button" data-open-request>Оставить заявку</button>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <a href="{% url 'main:index' %}" class="logo footer-logo">
+                NASEKOV<span>co</span>
+            </a>
+            <p>
+                Многофункциональная витрина производителя напитков:
+                каталог, производство, новости, контакты и формы заявок.
+            </p>
+        </div>
+
+        <div class="footer-col">
+            <h4>О компании</h4>
+            <a href="{% url 'main:about' %}">О компании</a>
+            <a href="#">Новости</a>
+            <a href="#">Контакты</a>
+            <a href="#">Карьера</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Продукция</h4>
+            <a href="#products" data-open-tab="soft">Безалкогольная</a>
+            <a href="#products" data-open-tab="energy">Энергетики</a>
+            <a href="#products" data-open-tab="draft">Разливные</a>
+            <a href="#products" data-open-tab="plant">Растительные</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Производство</h4>
+            <a href="#brewery">Производственная зона</a>
+            <a href="#lab">Лаборатория</a>
+            <a href="#drink-line">Цех напитков</a>
+            <a href="#geography">География бренда</a>
+        </div>
+    </div>
+
+    <div class="container footer-bottom">
+        <p>© 2026 NASEKOVco. Все права защищены.</p>
+        <div>
+            <a href="#">Политика конфиденциальности</a>
+            <a href="tel:+996555300401">+996 (555) 300-401</a>
+        </div>
     </div>
 </footer>
-{% endblock %}
 
+<div class="cookie-banner" id="cookieBanner">
+    <div>
+        <strong>Cookie</strong>
+        <p>
+            Мы используем cookie-файлы для аналитики и улучшения работы сайта.
+        </p>
+    </div>
+    <div class="cookie-actions">
+        <button class="btn btn-outline" id="cookieReject" type="button">Отклонить</button>
+        <button class="btn btn-primary" id="cookieAccept" type="button">Принять</button>
+    </div>
+</div>
 
+<div class="request-overlay" id="requestOverlay">
+    <div class="request-modal">
+        <button class="request-close" id="requestClose" type="button">×</button>
+
+        <h2>Оставить заявку</h2>
+        <p>
+            Заполните форму, и менеджер свяжется с Вами для уточнения деталей.
+        </p>
+
+        <form class="request-form" id="requestForm">
+            <label>
+                Ваше имя
+                <input type="text" name="name" placeholder="Введите имя" required>
+            </label>
+
+            <label>
+                Телефон
+                <input type="tel" name="phone" placeholder="+996 ___ ___ ___" required>
+            </label>
+
+            <label>
+                Сообщение
+                <textarea name="message" placeholder="Кратко опишите вопрос"></textarea>
+            </label>
+
+            <button class="btn btn-primary" type="submit">Отправить</button>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+            Спасибо! Заявка подготовлена. Подключите обработчик Django во view.
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'deps/js/landing.js' %}"></script>
+
+</body>
+</html>
