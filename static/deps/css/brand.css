@@ -248,17 +248,17 @@ footer a:hover {
 }
 
 .category-link:hover {
-  background: rgba(45, 134, 50, 0.08);
-  color: #2D8632;
+  background: rgba(18, 187, 108, 0.08);
+  color: #12bb6c;
 }
 
 .category-link.active {
-  background: #2D8632;
+  background: #12bb6c;
   color: #fff;
 }
 
 .category-link.active:hover {
-  background: #246b29;
+  background: #0b7442;
   color: #fff;
 }
 
@@ -267,8 +267,8 @@ footer a:hover {
 }
 
 .filter-form .form-check-input:checked {
-  background-color: #2D8632;
-  border-color: #2D8632;
+  background-color: #12bb6c;
+  border-color: #12bb6c;
 }
 
 .filter-form .filter-label {
@@ -281,7 +281,7 @@ footer a:hover {
 }
 
 .btn-brand {
-  background: #2D8632;
+  background: #12bb6c;
   color: #fff;
   border: none;
   padding: 0.55rem 1.25rem;
@@ -294,7 +294,7 @@ footer a:hover {
 }
 
 .btn-brand:hover {
-  background: #246b29;
+  background: #0b7442;
   color: #fff;
 }
 
@@ -320,14 +320,15 @@ footer a:hover {
   background: #fff;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  border: 1px solid #ececec;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
   height: 100%;
 }
 
 .product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-color: #d0d0d0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 .product-card__image-wrap {
@@ -397,7 +398,7 @@ footer a:hover {
 }
 
 .product-card__title:hover {
-  color: #2D8632;
+  color: #12bb6c;
 }
 
 .product-card__desc {
@@ -427,8 +428,7 @@ footer a:hover {
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
-  margin-top: auto;
-  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
 }
 
 .product-card__price-old {
@@ -438,44 +438,50 @@ footer a:hover {
 }
 
 .product-card__price-new {
-  color: #2D8632;
+  color: #12bb6c;
   font-size: 1.25rem;
   font-weight: 700;
   font-family: 'Montserrat', system-ui, sans-serif;
 }
 
-.btn-brand-cart {
+.product-card__footer {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.btn-brand-cart {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  background: #2D8632;
+  background: #12bb6c;
   color: #fff;
   border: none;
-  padding: 0.65rem 1rem;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.92rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
   text-decoration: none;
-  width: 100%;
   transition: background 0.15s;
+  flex-shrink: 0;
 }
 
 .btn-brand-cart:hover {
-  background: #246b29;
+  background: #0b7442;
   color: #fff;
 }
 
 .btn-brand-cart img,
 .btn-brand-cart svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   filter: brightness(0) invert(1);
 }
 
 .pagination .page-link {
-  color: #2D8632;
-  border-color: rgba(45, 134, 50, 0.2);
+  color: #12bb6c;
+  border-color: rgba(18, 187, 108, 0.2);
   border-radius: 8px;
   margin: 0 0.18rem;
   padding: 0.45rem 0.85rem;
@@ -483,15 +489,15 @@ footer a:hover {
 }
 
 .pagination .page-link:hover {
-  background: rgba(45, 134, 50, 0.08);
-  color: #2D8632;
-  border-color: #2D8632;
+  background: rgba(18, 187, 108, 0.08);
+  color: #12bb6c;
+  border-color: #12bb6c;
 }
 
 .pagination .page-item.active .page-link {
-  background: #2D8632;
+  background: #12bb6c;
   color: #fff;
-  border-color: #2D8632;
+  border-color: #12bb6c;
 }
 
 .pagination .page-item.disabled .page-link {
