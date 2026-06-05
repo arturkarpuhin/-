@@ -513,3 +513,262 @@ footer a:hover {
 }
 
 /* ========== /Ф3 ========== */
+/* ========== Ф5: Личный кабинет и корзина ========== */
+
+/* === [A] Личный кабинет (.profile-page) === */
+
+.profile-page h3 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.profile-page .custom-shadow {
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  box-shadow: none !important;
+}
+
+.profile-page .form-control {
+  border-radius: 8px;
+}
+
+.profile-page .form-control:focus {
+  border-color: #12bb6c;
+  box-shadow: 0 0 0 0.2rem rgba(18, 187, 108, 0.15);
+}
+
+.profile-page form .btn-dark {
+  background: #12bb6c;
+  border-color: #12bb6c;
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.55rem 1.5rem;
+  font-weight: 600;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.profile-page form .btn-dark:hover {
+  background: #0b7442;
+  border-color: #0b7442;
+  color: #fff;
+}
+
+.profile-page input[type="file"] {
+  border-radius: 8px;
+}
+
+/* === [B] Аккордеон "Мои заказы" === */
+
+.profile-page .accordion-item {
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.profile-page .accordion-button {
+  background: #fff;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.profile-page .accordion-button:not(.collapsed) {
+  background: rgba(18, 187, 108, 0.08);
+  color: #0b7442;
+  box-shadow: none;
+}
+
+.profile-page .accordion-button:focus {
+  border-color: #12bb6c;
+  box-shadow: 0 0 0 0.2rem rgba(18, 187, 108, 0.15);
+}
+
+.profile-page .accordion-body {
+  background: #fff;
+  padding: 1rem;
+}
+
+.profile-page .accordion-body .table-dark {
+  --bs-table-color: #1a1a1a;
+  --bs-table-bg: #fff;
+  --bs-table-border-color: #ececec;
+  --bs-table-striped-color: #1a1a1a;
+  --bs-table-striped-bg: #fafafa;
+  --bs-table-hover-color: #0b7442;
+  --bs-table-hover-bg: rgba(18, 187, 108, 0.08);
+  --bs-table-color-state: #1a1a1a;
+  --bs-table-bg-state: #fff;
+}
+
+.profile-page .accordion-body .table-dark,
+.profile-page .accordion-body .table-dark > :not(caption) > * > * {
+  background-color: #fff !important;
+  color: #1a1a1a !important;
+  border-color: #ececec !important;
+}
+
+.profile-page .accordion-body .table .text-white {
+  color: #1a1a1a !important;
+}
+
+.profile-page .accordion-body .table .text-white:hover {
+  color: #12bb6c !important;
+}
+
+.profile-page .accordion-body .table thead th {
+  background: rgba(18, 187, 108, 0.08);
+  color: #0b7442;
+  font-weight: 600;
+  border-bottom: 1px solid #ececec;
+}
+
+.profile-page .accordion-body .table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.profile-page .accordion-body .table tbody tr:hover {
+  background: rgba(18, 187, 108, 0.06);
+}
+
+.profile-page .accordion-body .table a {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.profile-page .accordion-body .table a:hover {
+  color: #12bb6c;
+}
+
+/* === [C] Бейдж статуса заказа === */
+
+.order-status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  background: rgba(18, 187, 108, 0.12);
+  color: #0b7442;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 999px;
+  margin-left: 0.4rem;
+}
+
+/* === [D] Корзина (#cart-items-container) === */
+
+#cart-items-container .card {
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+#cart-items-container .card-header {
+  background: rgba(18, 187, 108, 0.08);
+  color: #1a1a1a;
+  border-bottom: 1px solid #ececec;
+}
+
+#cart-items-container .card-header h5 {
+  font-weight: 600;
+  margin: 0;
+}
+
+#cart-items-container .list-group-item {
+  background: #fff;
+  border-color: #f0f0f0;
+  padding: 0.75rem 1rem;
+}
+
+#cart-items-container .input-group .btn,
+#cart-items-container .decrement,
+#cart-items-container .increment {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 6px;
+  background: #f5f5f5;
+  color: #1a1a1a;
+  border: 1px solid #e0e0e0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+#cart-items-container .input-group .btn:hover,
+#cart-items-container .decrement:hover,
+#cart-items-container .increment:hover {
+  background: rgba(18, 187, 108, 0.1);
+  color: #0b7442;
+  border-color: #12bb6c;
+}
+
+#cart-items-container .number {
+  width: 50px;
+  max-width: 50px;
+  text-align: center;
+  border-color: #ececec;
+  border-radius: 6px;
+  background: #fff;
+}
+
+#cart-items-container .remove-from-cart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(230, 57, 70, 0.1);
+  color: #e63946;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+#cart-items-container .remove-from-cart:hover {
+  background: rgba(230, 57, 70, 0.18);
+  color: #c1121f;
+}
+
+#cart-items-container .remove-from-cart img,
+#cart-items-container .remove-from-cart svg {
+  width: 18px;
+  height: 18px;
+}
+
+#cart-items-container .card-footer {
+  background: rgba(18, 187, 108, 0.06);
+  border-top: 1px solid #ececec;
+  font-weight: 600;
+}
+
+#cart-items-container .card-footer strong {
+  color: #0b7442;
+  font-size: 1.3rem;
+  font-family: 'Montserrat', system-ui, sans-serif;
+}
+
+#cart-items-container > a.btn-dark {
+  background: #12bb6c;
+  border-color: #12bb6c;
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.55rem 1.25rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+#cart-items-container > a.btn-dark:hover {
+  background: #0b7442;
+  border-color: #0b7442;
+  color: #fff;
+}
+
+/* ========== /Ф5 ========== */
