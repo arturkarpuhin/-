@@ -1,0 +1,112 @@
+{% load carts_tags %}
+
+{% user_carts request as carts %}
+
+<header class="site-header" id="siteHeader">
+    <div class="header-inner">
+        <a href="{% url 'main:index' %}" class="logo">
+            Абдыш-<span>Ата</span>
+        </a>
+
+        <nav class="desktop-nav">
+            <div class="nav-item">
+                <a href="{% url 'main:about' %}">О компании</a>
+                <div class="dropdown">
+                    <a href="{% url 'main:about' %}">История компании</a>
+                    <a href="#geography">География бренда</a>
+                    <a href="#">Новости</a>
+                    <a href="#">Контакты</a>
+                    <a href="#">Карьера</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#products">Продукция</a>
+                <div class="dropdown">
+                    <a href="#products" data-open-tab="soft">Безалкогольная</a>
+                    <a href="#products" data-open-tab="energy">Энергетики</a>
+                    <a href="#products" data-open-tab="draft">Разливные напитки</a>
+                    <a href="#products" data-open-tab="plant">Растительные продукты</a>
+                    <a href="#products" data-open-tab="beer">Раздел 18+</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#production">Производство</a>
+                <div class="dropdown">
+                    <a href="#brewery">Пивоварня</a>
+                    <a href="#lab">Лаборатория</a>
+                    <a href="#drink-line">Цех напитков</a>
+                    <a href="#geography">География</a>
+                </div>
+            </div>
+
+            <a href="#">Новости</a>
+            <a href="#">Контакты</a>
+        </nav>
+
+        <div class="header-actions">
+            <a href="{% url 'catalog:index' 'all' %}" class="catalog-btn">Каталог</a>
+
+            <a href="{% url 'users:users_cart' %}" class="icon-btn cart-link" aria-label="Корзина">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                <span id="goods-in-cart-count" class="cart-count">{{ carts.total_quantity }}</span>
+            </a>
+
+            {% if not user.is_authenticated %}
+            <a href="{% url 'user:login' %}" class="catalog-btn login-btn">Войти</a>
+            {% else %}
+            <div class="user-menu">
+                <button class="icon-btn user-trigger" type="button" aria-label="Профиль">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </button>
+                <div class="user-dropdown">
+                    <span class="user-hello">{{ user.username }}</span>
+                    <a href="{% url 'users:users_cart' %}">Корзина</a>
+                    <a href="{% url 'users:profile' %}">Личный кабинет</a>
+                    {% if user.is_admin or user.is_staff %}
+                    <a href="{% url 'admin:index' %}">Админ-панель</a>
+                    {% endif %}
+                    <hr>
+                    <a href="{% url 'user:logout' %}">Выйти</a>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="lang">
+                <button class="lang-current" type="button">RU</button>
+                <div class="lang-menu">
+                    <a href="#">RU</a>
+                    <a href="#">EN</a>
+                    <a href="#">KG</a>
+                </div>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="{% url 'catalog:index' 'all' %}">Каталог</a>
+        <a href="{% url 'users:users_cart' %}">Корзина ({{ carts.total_quantity }})</a>
+        <a href="{% url 'main:about' %}">О компании</a>
+        <a href="#products">Продукция</a>
+        <a href="#production">Производство</a>
+        <a href="#">Новости</a>
+        <a href="#">Контакты</a>
+        {% if not user.is_authenticated %}
+        <a href="{% url 'user:login' %}">Войти</a>
+        {% else %}
+        <a href="{% url 'users:profile' %}">Личный кабинет</a>
+        {% if user.is_admin or user.is_staff %}
+        <a href="{% url 'admin:index' %}">Админ-панель</a>
+        {% endif %}
+        <a href="{% url 'user:logout' %}">Выйти</a>
+        {% endif %}
+        <button class="mobile-request" type="button" data-open-request>Оставить заявку</button>
+    </div>
+</header>

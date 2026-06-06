@@ -1,0 +1,398 @@
+/* header.css — шапка сайта "Абдыш-Ата" */
+/* Стили для templates/includes/site_header.html */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Unbounded:wght@600;700;800&display=swap');
+
+    :root {
+        --cream: #f6f1df;
+        --cream-2: #fffaf0;
+        --dark: #102015;
+        --text: #1f2a22;
+        --muted: #687267;
+        --green: #0b7442;
+        --green-2: #0f8d53;
+        --green-3: #12bb6c;
+        --deep-green: #063820;
+        --mint: #e8f6ee;
+        --gold: #f3b43b;
+        --orange: #ff9f1c;
+        --red: #cf3030;
+        --white: #ffffff;
+        --line: rgba(19, 43, 28, 0.12);
+        --glass: rgba(255, 255, 255, 0.76);
+        --shadow-soft: 0 18px 55px rgba(9, 45, 27, 0.14);
+        --shadow-card: 0 28px 80px rgba(7, 43, 26, 0.18);
+        --radius-xl: 34px;
+        --radius-lg: 26px;
+        --radius-md: 18px;
+        --font-main: "Manrope", Arial, Helvetica, sans-serif;
+        --font-accent: "Unbounded", "Manrope", Arial, Helvetica, sans-serif;
+    }
+
+    /* Header */
+
+    .site-header {
+        position: fixed;
+        top: 18px;
+        left: 0;
+        right: 0;
+        z-index: 70;
+        transition: transform 0.28s ease;
+    }
+
+    .site-header.is-hidden {
+        transform: translateY(-120%);
+    }
+
+    .header-inner {
+        width: min(1160px, calc(100% - 38px));
+        min-height: 66px;
+        margin: 0 auto;
+        padding: 8px 10px 8px 22px;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.58);
+        border-radius: 999px;
+        background: rgba(247, 253, 249, 0.82);
+        backdrop-filter: blur(22px);
+        box-shadow: 0 14px 42px rgba(4, 39, 23, 0.13);
+    }
+
+    .logo {
+        display: inline-flex;
+        align-items: center;
+        color: var(--deep-green);
+        font-family: var(--font-main);
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.08em;
+        white-space: nowrap;
+    }
+
+    .logo span {
+        color: var(--orange);
+        letter-spacing: -0.06em;
+    }
+
+    .desktop-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .desktop-nav > a,
+    .nav-item > a {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        min-height: 42px;
+        padding: 0 13px;
+        border-radius: 999px;
+        color: rgba(19, 32, 24, 0.78);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .desktop-nav > a:hover,
+    .nav-item:hover > a {
+        color: var(--deep-green);
+        background: rgba(11, 116, 66, 0.08);
+    }
+
+    .nav-item {
+        position: relative;
+    }
+
+    .dropdown {
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        min-width: 230px;
+        padding: 10px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: var(--shadow-soft);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition: 0.22s ease;
+    }
+
+    .nav-item:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .dropdown a {
+        display: block;
+        padding: 11px 13px;
+        border-radius: 14px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .dropdown a:hover {
+        color: var(--deep-green);
+        background: rgba(11, 116, 66, 0.08);
+    }
+
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .lang {
+        position: relative;
+    }
+
+    .lang-current {
+        width: 48px;
+        height: 48px;
+        border: 0;
+        border-radius: 50%;
+        background: var(--white);
+        color: var(--deep-green);
+        font-size: 13px;
+        font-weight: 800;
+        box-shadow: 0 10px 28px rgba(4, 39, 23, 0.08);
+    }
+
+    .lang-menu {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        width: 90px;
+        padding: 8px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--white);
+        box-shadow: var(--shadow-soft);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition: 0.22s ease;
+    }
+
+    .lang:hover .lang-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .lang-menu a {
+        display: block;
+        padding: 8px 10px;
+        border-radius: 10px;
+        color: var(--deep-green);
+        font-size: 13px;
+        font-weight: 800;
+    }
+
+    .lang-menu a:hover {
+        background: rgba(11, 116, 66, 0.08);
+    }
+
+    .menu-toggle {
+        position: relative;
+        display: none;
+        width: 48px;
+        height: 48px;
+        border: 0;
+        border-radius: 50%;
+        background: var(--deep-green);
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        margin: 4px auto;
+        border-radius: 999px;
+        background: var(--white);
+        transition: transform 0.22s ease, opacity 0.22s ease;
+    }
+
+    .menu-toggle.is-active span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.is-active span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 96px;
+        left: 19px;
+        right: 19px;
+        z-index: 69;
+        display: none;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: var(--shadow-soft);
+    }
+
+    .mobile-menu.is-open {
+        display: grid;
+        gap: 8px;
+    }
+
+    .mobile-menu a,
+    .mobile-request {
+        min-height: 48px;
+        padding: 13px 15px;
+        border: 0;
+        border-radius: 16px;
+        background: rgba(11, 116, 66, 0.07);
+        color: var(--deep-green);
+        font-size: 14px;
+        font-weight: 800;
+        text-align: left;
+    }
+
+/* ===== Шапка: каталог / корзина / профиль (Абдыш-Ата) ===== */
+.catalog-btn {
+    min-height: 48px;
+    padding: 0 20px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--green), var(--green-3));
+    box-shadow: 0 14px 28px rgba(14, 144, 80, 0.24);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.catalog-btn:hover {
+    transform: translateY(-2px);
+}
+
+.login-btn {
+    background: var(--white);
+    color: var(--deep-green);
+    box-shadow: 0 10px 28px rgba(4, 39, 23, 0.10);
+}
+
+.icon-btn {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--deep-green);
+    box-shadow: 0 10px 28px rgba(4, 39, 23, 0.08);
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon-btn:hover {
+    transform: translateY(-2px);
+    color: var(--green);
+}
+
+.cart-count {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: var(--orange);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.user-menu {
+    position: relative;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    min-width: 210px;
+    padding: 10px;
+    display: grid;
+    gap: 2px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--white);
+    box-shadow: var(--shadow-soft);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: 0.22s ease;
+    z-index: 80;
+}
+
+.user-menu:hover .user-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.user-dropdown a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 12px;
+    color: var(--deep-green);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.user-dropdown a:hover {
+    background: rgba(11, 116, 66, 0.08);
+}
+
+.user-dropdown hr {
+    margin: 6px 4px;
+    border: 0;
+    border-top: 1px solid var(--line);
+}
+
+.user-hello {
+    display: block;
+    padding: 6px 12px 8px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+@media (max-width: 1080px) {
+    .catalog-btn,
+    .login-btn,
+    .user-menu {
+        display: none;
+    }
+}
