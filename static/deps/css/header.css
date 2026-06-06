@@ -29,19 +29,25 @@
         --font-accent: "Unbounded", "Manrope", Arial, Helvetica, sans-serif;
     }
 
+/* Компенсация фиксированной шапки (на лендинге — своя компенсация в landing.css) */
+body { padding-top: 96px; }
+
     /* Header */
 
     .site-header {
         position: fixed;
         top: 18px;
-        left: 0;
-        right: 0;
+        left: 50%;
+        right: auto;
+        width: calc(100% - 38px);
+        max-width: 1320px;
+        transform: translateX(-50%);
         z-index: 70;
         transition: transform 0.28s ease;
     }
 
     .site-header.is-hidden {
-        transform: translateY(-120%);
+        transform: translateX(-50%) translateY(-120%);
     }
 
     .header-inner {
@@ -96,6 +102,7 @@
         font-size: 13px;
         font-weight: 700;
         letter-spacing: -0.01em;
+        white-space: nowrap;
         transition: background 0.2s ease, color 0.2s ease;
     }
 
@@ -395,4 +402,56 @@
     .user-menu {
         display: none;
     }
+}
+
+/* ===== Поиск в шапке ===== */
+.header-search {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid #ececec;
+    background: var(--white, #ffffff);
+    overflow: hidden;
+}
+
+.header-search:focus-within {
+    border-color: var(--green-3, #12bb6c);
+}
+
+.header-search-input {
+    border: 0;
+    outline: none;
+    background: transparent;
+    padding: 0 14px;
+    font: inherit;
+    font-size: 14px;
+    width: 140px;
+    color: #1a1a1a;
+}
+
+.header-search-input::placeholder {
+    color: #9a9a9a;
+}
+
+.header-search-btn {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: var(--green-3, #12bb6c);
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.header-search-btn:hover {
+    background: var(--green, #0b7442);
+}
+
+@media (max-width: 1280px) {
+    .header-search { display: none; }
 }

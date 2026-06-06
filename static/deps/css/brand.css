@@ -298,12 +298,25 @@ footer a:hover {
   color: #fff;
 }
 
-.catalog-header h2 {
-  font-family: 'Montserrat', system-ui, sans-serif;
+.catalog-title {
+  font-family: 'Unbounded', 'Manrope', 'Montserrat', system-ui, sans-serif;
   font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 1.5rem;
-  font-size: 1.75rem;
+  color: #12bb6c;
+  font-size: 2rem;
+  text-align: center;
+  margin: 12px 0 24px;
+  display: block;
+  position: relative;
+}
+
+.catalog-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #ff9f1c;
+  border-radius: 3px;
+  margin: 10px auto 0;
 }
 
 .catalog-empty {
@@ -510,6 +523,38 @@ footer a:hover {
     position: static;
     margin-bottom: 1.5rem;
   }
+}
+
+/* ===== Ф3-плавашка: кнопка корзины ===== */
+#modalButton {
+  position: sticky;
+  top: 110px;
+  width: 100%;
+  margin-bottom: 12px;
+  background: #12bb6c !important;
+  border-color: #12bb6c !important;
+  color: #fff !important;
+  border-radius: 999px;
+  padding: 0.55rem 1.25rem;
+  gap: 10px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 20px rgba(18, 187, 108, 0.35);
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+#modalButton:hover {
+  background: #0b7442 !important;
+  border-color: #0b7442 !important;
+  box-shadow: 0 6px 24px rgba(11, 116, 66, 0.4);
+}
+
+#modalButton img {
+  filter: brightness(0) invert(1);
+  flex-shrink: 0;
 }
 
 /* ========== /Ф3 ========== */

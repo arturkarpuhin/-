@@ -2,9 +2,7 @@
 {% load static %}
 {% load goods_tags %}
 
-{% block modal_cart %}
-{% include "includes/cart_button.html" %}
-{% endblock %}
+{% block modal_cart %}{% endblock %}
 
 {% block content %}
 <div class="container py-4">
@@ -70,6 +68,7 @@
                         <label class="form-check-label" for="orderDesc">Сначала дороже</label>
                     </div>
 
+                    {% include "includes/cart_button.html" %}
                     <button type="submit" class="btn btn-brand">Применить</button>
 
                 </form>
@@ -80,7 +79,7 @@
         <main class="col-lg-9 col-md-12">
 
             <div class="catalog-header">
-                <h2>
+                <h2 class="catalog-title">
                     {% if request.GET.q %}
                         Результаты поиска: «{{ request.GET.q }}»
                     {% elif slug_url == "all" %}
