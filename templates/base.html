@@ -23,6 +23,7 @@
       <!-- Фирменная тема «Абдыш-Ата» (грузится последней, перекрывает дефолт) -->
       <link rel="stylesheet" href="{% static "deps/css/brand.css" %}">
       <link rel="stylesheet" href="{% static "deps/css/header.css" %}">
+      <link rel="stylesheet" href="{% static "deps/css/footer.css" %}">
     <!-- Favicons for different platforms -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static "deps/favicon/apple-touch-icon.png" %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static "deps/favicon/favicon-32x32.png" %}">
@@ -53,7 +54,7 @@
         </div>
     </section>
 
-    {% block footer %}{% endblock %}
+    {% include "includes/site_footer.html" %}
 
     <script src="{% static "deps/js/jquery/jquery-3.7.0.min.js" %}"></script>
     <script src="{% static "deps/js/jquery-ajax.js" %}"></script>

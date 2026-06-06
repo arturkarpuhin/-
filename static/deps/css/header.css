@@ -37,17 +37,18 @@ body { padding-top: 96px; }
     .site-header {
         position: fixed;
         top: 18px;
-        left: 50%;
-        right: auto;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
         width: calc(100% - 38px);
-        max-width: 1320px;
-        transform: translateX(-50%);
+        max-width: 1400px;
         z-index: 70;
         transition: transform 0.28s ease;
     }
 
     .site-header.is-hidden {
-        transform: translateX(-50%) translateY(-120%);
+        transform: translateY(-120%);
     }
 
     .header-inner {
