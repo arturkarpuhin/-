@@ -9,8 +9,8 @@ $(document).ready(function () {
         e.preventDefault();
 
         // Берем элемент счетчика в значке корзины и берем оттуда значение
-        var goodsInCartCount = $("#goods-in-cart-count");
-        var cartCount = parseInt(goodsInCartCount.text() || 0);
+        var goodsInCartCount = $(".cart-count");
+        var cartCount = parseInt(goodsInCartCount.first().text() || 0);
 
         // Получаем id товара из атрибута data-product-id
         var product_id = $(this).data("product-id");
@@ -60,8 +60,8 @@ $(document).ready(function () {
         e.preventDefault();
 
         // Берем элемент счетчика в значке корзины и берем оттуда значение
-        var goodsInCartCount = $("#goods-in-cart-count");
-        var cartCount = parseInt(goodsInCartCount.text() || 0);
+        var goodsInCartCount = $(".cart-count");
+        var cartCount = parseInt(goodsInCartCount.first().text() || 0);
 
         // Получаем id корзины из атрибута data-cart-id
         var cart_id = $(this).data("cart-id");
@@ -163,8 +163,8 @@ $(document).ready(function () {
                 }, 7000);
 
                 // Изменяем количество товаров в корзине
-                var goodsInCartCount = $("#goods-in-cart-count");
-                var cartCount = parseInt(goodsInCartCount.text() || 0);
+                var goodsInCartCount = $(".cart-count");
+                var cartCount = parseInt(goodsInCartCount.first().text() || 0);
                 cartCount += change;
                 goodsInCartCount.text(cartCount);
 
