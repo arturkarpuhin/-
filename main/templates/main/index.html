@@ -1,22 +1,15 @@
+{% extends "base.html" %}
 {% load static %}
-{% load carts_tags %}
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Абдыш-Ата — производитель напитков</title>
+{% block custom_css %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'deps/css/landing.css' %}">
+{% endblock %}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'deps/css/landing.css' %}">
-</head>
-
-<body>
-
-{% user_carts request as carts %}
+{% block page_wrapper %}
+<div class="landing-page">
 
 <div
     id="heroAssets"
@@ -40,116 +33,6 @@
         </div>
     </div>
 </div>
-
-<header class="site-header" id="siteHeader">
-    <div class="header-inner">
-        <a href="{% url 'main:index' %}" class="logo">
-            Абдыш-<span>Ата</span>
-        </a>
-
-        <nav class="desktop-nav">
-            <div class="nav-item">
-                <a href="{% url 'main:about' %}">О компании</a>
-                <div class="dropdown">
-                    <a href="{% url 'main:about' %}">История компании</a>
-                    <a href="#geography">География бренда</a>
-                    <a href="#">Новости</a>
-                    <a href="#">Контакты</a>
-                    <a href="#">Карьера</a>
-                </div>
-            </div>
-
-            <div class="nav-item">
-                <a href="#products">Продукция</a>
-                <div class="dropdown">
-                    <a href="#products" data-open-tab="soft">Безалкогольная</a>
-                    <a href="#products" data-open-tab="energy">Энергетики</a>
-                    <a href="#products" data-open-tab="draft">Разливные напитки</a>
-                    <a href="#products" data-open-tab="plant">Растительные продукты</a>
-                    <a href="#products" data-open-tab="beer">Раздел 18+</a>
-                </div>
-            </div>
-
-            <div class="nav-item">
-                <a href="#production">Производство</a>
-                <div class="dropdown">
-                    <a href="#brewery">Пивоварня</a>
-                    <a href="#lab">Лаборатория</a>
-                    <a href="#drink-line">Цех напитков</a>
-                    <a href="#geography">География</a>
-                </div>
-            </div>
-
-            <a href="#">Новости</a>
-            <a href="#">Контакты</a>
-        </nav>
-
-        <div class="header-actions">
-            <a href="{% url 'catalog:index' 'all' %}" class="catalog-btn">Каталог</a>
-
-            <a href="{% url 'users:users_cart' %}" class="icon-btn cart-link" aria-label="Корзина">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                <span id="goods-in-cart-count" class="cart-count">{{ carts.total_quantity }}</span>
-            </a>
-
-            {% if not user.is_authenticated %}
-            <a href="{% url 'user:login' %}" class="catalog-btn login-btn">Войти</a>
-            {% else %}
-            <div class="user-menu">
-                <button class="icon-btn user-trigger" type="button" aria-label="Профиль">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                </button>
-                <div class="user-dropdown">
-                    <span class="user-hello">{{ user.username }}</span>
-                    <a href="{% url 'users:users_cart' %}">Корзина</a>
-                    <a href="{% url 'users:profile' %}">Личный кабинет</a>
-                    {% if user.is_admin or user.is_staff %}
-                    <a href="{% url 'admin:index' %}">Админ-панель</a>
-                    {% endif %}
-                    <hr>
-                    <a href="{% url 'user:logout' %}">Выйти</a>
-                </div>
-            </div>
-            {% endif %}
-
-            <div class="lang">
-                <button class="lang-current" type="button">RU</button>
-                <div class="lang-menu">
-                    <a href="#">RU</a>
-                    <a href="#">EN</a>
-                    <a href="#">KG</a>
-                </div>
-            </div>
-
-            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="{% url 'catalog:index' 'all' %}">Каталог</a>
-        <a href="{% url 'users:users_cart' %}">Корзина ({{ carts.total_quantity }})</a>
-        <a href="{% url 'main:about' %}">О компании</a>
-        <a href="#products">Продукция</a>
-        <a href="#production">Производство</a>
-        <a href="#">Новости</a>
-        <a href="#">Контакты</a>
-        {% if not user.is_authenticated %}
-        <a href="{% url 'user:login' %}">Войти</a>
-        {% else %}
-        <a href="{% url 'users:profile' %}">Личный кабинет</a>
-        {% if user.is_admin or user.is_staff %}
-        <a href="{% url 'admin:index' %}">Админ-панель</a>
-        {% endif %}
-        <a href="{% url 'user:logout' %}">Выйти</a>
-        {% endif %}
-        <button class="mobile-request" type="button" data-open-request>Оставить заявку</button>
-    </div>
-</header>
-
 <main>
     <section class="hero">
         <div class="hero-decor one"></div>
@@ -633,53 +516,6 @@
         </div>
     </section>
 </main>
-
-<footer class="site-footer">
-    <div class="container footer-grid">
-        <div class="footer-brand">
-            <a href="{% url 'main:index' %}" class="logo footer-logo">
-                Абдыш-<span>Ата</span>
-            </a>
-            <p>
-                Многофункциональная витрина производителя напитков:
-                каталог, производство, новости, контакты и формы заявок.
-            </p>
-        </div>
-
-        <div class="footer-col">
-            <h4>О компании</h4>
-            <a href="{% url 'main:about' %}">О компании</a>
-            <a href="#">Новости</a>
-            <a href="#">Контакты</a>
-            <a href="#">Карьера</a>
-        </div>
-
-        <div class="footer-col">
-            <h4>Продукция</h4>
-            <a href="#products" data-open-tab="soft">Безалкогольная</a>
-            <a href="#products" data-open-tab="energy">Энергетики</a>
-            <a href="#products" data-open-tab="draft">Разливные</a>
-            <a href="#products" data-open-tab="plant">Растительные</a>
-        </div>
-
-        <div class="footer-col">
-            <h4>Производство</h4>
-            <a href="#brewery">Производственная зона</a>
-            <a href="#lab">Лаборатория</a>
-            <a href="#drink-line">Цех напитков</a>
-            <a href="#geography">География бренда</a>
-        </div>
-    </div>
-
-    <div class="container footer-bottom">
-        <p>© 2026 Абдыш-Ата. Сайт разработан Артуром Карпухиным.</p>
-        <div>
-            <a href="#">Политика конфиденциальности</a>
-            <a href="tel:+996555300401">+996 (555) 300-401</a>
-        </div>
-    </div>
-</footer>
-
 <div class="cookie-banner" id="cookieBanner">
     <div>
         <strong>Cookie</strong>
@@ -727,7 +563,9 @@
     </div>
 </div>
 
-<script src="{% static 'deps/js/landing.js' %}"></script>
+</div>
+{% endblock page_wrapper %}
 
-</body>
-</html>
+{% block custom_js %}
+<script src="{% static 'deps/js/landing.js' %}"></script>
+{% endblock %}

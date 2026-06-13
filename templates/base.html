@@ -24,6 +24,7 @@
       <link rel="stylesheet" href="{% static "deps/css/brand.css" %}">
       <link rel="stylesheet" href="{% static "deps/css/header.css" %}">
       <link rel="stylesheet" href="{% static "deps/css/footer.css" %}">
+    {% block custom_css %}{% endblock %}
     <!-- Favicons for different platforms -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static "deps/favicon/apple-touch-icon.png" %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static "deps/favicon/favicon-32x32.png" %}">
@@ -40,6 +41,7 @@
             {% block modal_cart %}{% endblock %}
         </div>
         <!-- Контент -->
+        {% block page_wrapper %}
         <div class="container">
             <div class="row mt-1">
                 <div class="col-lg-2">
@@ -52,6 +54,7 @@
                 </div>
             </div>
         </div>
+        {% endblock %}
     </section>
 
     {% include "includes/site_footer.html" %}
@@ -60,6 +63,7 @@
     <script src="{% static "deps/js/jquery-ajax.js" %}"></script>
     <script src="{% static "deps/js/bootstrap/bootstrap.bundle.min.js" %}"></script>
     <script src="{% static "deps/js/header.js" %}"></script>
+    {% block custom_js %}{% endblock %}
 </body>
 
 </html>
