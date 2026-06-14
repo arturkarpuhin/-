@@ -4,6 +4,23 @@ from django import forms
 
 class CreateOrderForm(forms.Form):
 
+    CITY_CHOICES = [
+        ('Кант', 'Кант'),
+        ('Бишкек', 'Бишкек'),
+    ]
+
+    STREET_CHOICES = [
+        ('', '— выберите улицу —'),
+        ('Ленина', 'Ленина'),
+        ('Гагарина', 'Гагарина'),
+        ('Токтогула', 'Токтогула'),
+        ('Фрунзе', 'Фрунзе'),
+        ('Логвиненко', 'Логвиненко'),
+        ('Центральная', 'Центральная'),
+        ('Зубкова', 'Зубкова'),
+        ('Панфилова', 'Панфилова'),
+    ]
+
     first_name = forms.CharField()
     last_name = forms.CharField(label='Фамилия')
     phone_number = forms.CharField()
@@ -13,7 +30,10 @@ class CreateOrderForm(forms.Form):
             ("1", True),
             ],
         )
-    delivery_address = forms.CharField(required=False)
+    city = forms.ChoiceField(choices=CITY_CHOICES, required=False, label='Город')
+    street = forms.ChoiceField(choices=STREET_CHOICES, required=False, label='Улица')
+    house_number = forms.CharField(required=False, label='Номер дома/квартиры')
+    delivery_address = forms.CharField(required=False, label='Ориентиры / Доп. информация')
     payment_on_get = forms.ChoiceField(
         choices=[
             ("0", 'False'),

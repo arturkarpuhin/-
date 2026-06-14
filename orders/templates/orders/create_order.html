@@ -66,8 +66,34 @@
                             </div>
                         </div>
                         <div class="mb-3" id="deliveryAddressField">
-                            <label for="id_delivery_address" class="form-label">Адрес
-                                доставки*:</label>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="id_city" class="form-label">Город*:</label>
+                                    <select name="city" id="id_city" class="form-select">
+                                        <option value="Кант" selected>Кант</option>
+                                        <option value="Бишкек">Бишкек</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="id_street" class="form-label">Улица*:</label>
+                                    <select name="street" id="id_street" class="form-select">
+                                        <option value="">— выберите улицу —</option>
+                                        <option value="Ленина">Ленина</option>
+                                        <option value="Гагарина">Гагарина</option>
+                                        <option value="Токтогула">Токтогула</option>
+                                        <option value="Фрунзе">Фрунзе</option>
+                                        <option value="Логвиненко">Логвиненко</option>
+                                        <option value="Центральная">Центральная</option>
+                                        <option value="Зубкова">Зубкова</option>
+                                        <option value="Панфилова">Панфилова</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="id_house_number" class="form-label">Номер дома/квартиры*:</label>
+                                    <input type="text" name="house_number" id="id_house_number" class="form-control" placeholder="Например, 12а">
+                                </div>
+                            </div>
+                            <label for="id_delivery_address" class="form-label">Ориентиры / Доп. информация:</label>
                             <textarea class="form-control" id="id_delivery_address"
                                 value="{% if form.delivery_address.value %}{{ form.delivery_address.value }}{% endif %}"
                                 name="delivery_address" rows="2"></textarea>

@@ -4,8 +4,9 @@
 
 {% block modal_cart %}{% endblock %}
 
-{% block content %}
+{% block page_wrapper %}
 <div class="container py-4">
+    {% include "includes/notifications.html" %}
     <div class="row">
 
         <!-- САЙДБАР -->
@@ -181,4 +182,4 @@
         </main>
     </div>
 </div>
-{% endblock %}
+{% endblock page_wrapper %}

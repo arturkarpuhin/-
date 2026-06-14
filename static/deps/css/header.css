@@ -164,7 +164,7 @@ body { padding-top: 96px; }
     .header-actions {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 7px;
     }
 
     .lang {
@@ -435,7 +435,7 @@ body { padding-top: 96px; }
     padding: 0 14px;
     font: inherit;
     font-size: 14px;
-    width: 140px;
+    width: 120px;
     color: #1a1a1a;
 }
 

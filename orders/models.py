@@ -15,14 +15,40 @@ class OrderitemQueryset(models.QuerySet):
         return 0
 
 class Order(models.Model):
+    STATUS_CHOICES = (
+        ('В обработке', 'В обработке'),
+        ('Доставляется', 'Доставляется'),
+        ('Выполнен', 'Выполнен'),
+        ('Отменён', 'Отменён'),
+    )
+
+    CITY_CHOICES = (
+        ('Кант', 'Кант'),
+        ('Бишкек', 'Бишкек'),
+    )
+
+    STREET_CHOICES = (
+        ('Ленина', 'Ленина'),
+        ('Гагарина', 'Гагарина'),
+        ('Токтогула', 'Токтогула'),
+        ('Фрунзе', 'Фрунзе'),
+        ('Логвиненко', 'Логвиненко'),
+        ('Центральная', 'Центральная'),
+        ('Зубкова', 'Зубкова'),
+        ('Панфилова', 'Панфилова'),
+    )
+
     user = models.ForeignKey(to=User, on_delete=models.SET_DEFAULT, blank=True, null=True, verbose_name="Пользователь", default=None)
     created_timestamp = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания заказа")
     phone_number = models.CharField(max_length=20, verbose_name="Номер телефона")
     requires_delivery = models.BooleanField(default=False, verbose_name="Требуется доставка")
-    delivery_address = models.TextField(null=True, blank=True, verbose_name="Адрес доставки")
+    city = models.CharField(max_length=50, choices=CITY_CHOICES, default='Кант', verbose_name="Город")
+    street = models.CharField(max_length=100, choices=STREET_CHOICES, blank=True, null=True, verbose_name="Улица")
+    house_number = models.CharField(max_length=20, blank=True, null=True, verbose_name="Номер дома/квартиры")
+    delivery_address = models.TextField(null=True, blank=True, verbose_name="Ориентиры / Доп. информация")
     payment_on_get = models.BooleanField(default=False, verbose_name="Оплата при получении")
     is_paid = models.BooleanField(default=False, verbose_name="Оплачено")
-    status = models.CharField(max_length=50, default='В обработке', verbose_name="Статус заказа")
+    status = models.CharField(max_length=20, default='В обработке', choices=STATUS_CHOICES, verbose_name="Статус заказа")
 
     class Meta:
         db_table = "order"
